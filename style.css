@@ -112,8 +112,8 @@ body {
 
 .hero-title {
     font-family: var(--font-h);
-    font-size: clamp(4.5rem, 11vw, 10rem);
-    font-weight: 800; line-height: 0.9; letter-spacing: -0.04em;
+    font-size: clamp(3rem, 7.5vw, 7.5rem);
+    font-weight: 800; line-height: 0.95; letter-spacing: -0.03em;
     margin-bottom: 3.5rem;
     display: flex; flex-direction: column; gap: 0.05em;
 }
@@ -467,7 +467,7 @@ body {
 
     /* Hero */
     .hero-inner { padding: 4rem 0 3rem; }
-    .hero-title { font-size: clamp(3.5rem, 14vw, 6rem); margin-bottom: 2.5rem; }
+    .hero-title { font-size: clamp(2.8rem, 11vw, 5rem); margin-bottom: 2.5rem; }
     .hero-name--outline { -webkit-text-stroke-width: 1px; }
     .hero-bottom { flex-direction: column; gap: 2rem; align-items: flex-start; }
     .hero-desc { font-size: 0.93rem; }
