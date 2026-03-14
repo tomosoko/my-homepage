@@ -167,13 +167,13 @@ function initScrollAnimations() {
                 entry.target.classList.add('visible');
             }
         });
-    }, { threshold: 0.08 });
+    }, { threshold: 0.05 });
 
     const targets = document.querySelectorAll(
-        '.project-item, .about-layout, .skills-grid, .about-stats, .earlier-card, .contact-layout'
+        '.project-item, .about-layout, .skills-grid, .earlier-card, .contact-layout'
     );
     targets.forEach(el => {
-        el.classList.add('fade-in');
+        el.classList.add('will-animate');
         observer.observe(el);
     });
 }
