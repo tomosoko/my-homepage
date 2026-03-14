@@ -1,0 +1,79 @@
+<svg viewBox="0 0 640 340" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Grad-CAM heatmap gradients -->
+    <radialGradient id="hotspot1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#ff2200" stop-opacity="0.75"/>
+      <stop offset="40%"  stop-color="#ff7700" stop-opacity="0.55"/>
+      <stop offset="75%"  stop-color="#ffcc00" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#0033ff" stop-opacity="0.0"/>
+    </radialGradient>
+    <radialGradient id="hotspot2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#ff4400" stop-opacity="0.55"/>
+      <stop offset="50%"  stop-color="#ff9900" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#0033ff" stop-opacity="0.0"/>
+    </radialGradient>
+    <radialGradient id="cool" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#0055ff" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#0033ff" stop-opacity="0.0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="640" height="340" fill="#080808" rx="4"/>
+  <line x1="0" y1="170" x2="640" y2="170" stroke="#111" stroke-width="1"/>
+  <line x1="320" y1="0" x2="320" y2="340" stroke="#111" stroke-width="1"/>
+
+  <!-- Same knee anatomy as OsteoVision -->
+  <!-- Femur shaft -->
+  <rect x="288" y="15" width="64" height="100" rx="18" fill="#151515" stroke="#909090" stroke-width="2" opacity="0.6"/>
+  <!-- Femoral condyles -->
+  <ellipse cx="296" cy="165" rx="52" ry="44" fill="#121212" stroke="#a0a0a0" stroke-width="2" opacity="0.65"/>
+  <ellipse cx="368" cy="162" rx="48" ry="42" fill="#121212" stroke="#a0a0a0" stroke-width="2" opacity="0.65"/>
+  <!-- Intercondylar notch -->
+  <path d="M 316 196 Q 332 214 348 196" fill="none" stroke="#777" stroke-width="1.5" opacity="0.6"/>
+  <!-- Tibial plateau -->
+  <ellipse cx="332" cy="245" rx="82" ry="17" fill="#121212" stroke="#909090" stroke-width="2" opacity="0.6"/>
+  <!-- Tibial spines -->
+  <line x1="322" y1="230" x2="318" y2="242" stroke="#888" stroke-width="2" opacity="0.6"/>
+  <line x1="342" y1="230" x2="346" y2="242" stroke="#888" stroke-width="2" opacity="0.6"/>
+  <!-- Tibia shaft -->
+  <rect x="280" y="256" width="106" height="68" rx="12" fill="#111" stroke="#808080" stroke-width="1.5" opacity="0.55"/>
+  <!-- Fibula -->
+  <ellipse cx="418" cy="285" rx="16" ry="48" fill="none" stroke="#555" stroke-width="1.5" opacity="0.45"/>
+
+  <!-- === GRAD-CAM HEATMAP OVERLAY === -->
+  <!-- Main hotspot: lateral femoral condyle (most attended area) -->
+  <ellipse cx="364" cy="155" rx="58" ry="50" fill="url(#hotspot1)" opacity="1"/>
+  <!-- Secondary: medial condyle -->
+  <ellipse cx="292" cy="160" rx="44" ry="38" fill="url(#hotspot2)" opacity="0.85"/>
+  <!-- Cool area: shaft -->
+  <ellipse cx="320" cy="65" rx="35" ry="45" fill="url(#cool)" opacity="0.7"/>
+
+  <!-- Grad-CAM colorbar -->
+  <defs>
+    <linearGradient id="colorbar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#0033ff"/>
+      <stop offset="25%"  stop-color="#00ccff"/>
+      <stop offset="50%"  stop-color="#00ff88"/>
+      <stop offset="75%"  stop-color="#ffcc00"/>
+      <stop offset="100%" stop-color="#ff2200"/>
+    </linearGradient>
+  </defs>
+  <rect x="14" y="288" width="200" height="10" rx="2" fill="url(#colorbar)" opacity="0.85"/>
+  <text x="14" y="312" fill="#444" font-size="8" font-family="monospace">Low</text>
+  <text x="198" y="312" fill="#ff4400" font-size="8" font-family="monospace">High</text>
+  <text x="75" y="312" fill="#555" font-size="8" font-family="monospace">Attention</text>
+
+  <!-- Annotation arrow + label -->
+  <line x1="380" y1="140" x2="450" y2="100" stroke="rgba(255,150,0,0.7)" stroke-width="1.5"/>
+  <circle cx="380" cy="140" r="4" fill="#ff7700" opacity="0.9"/>
+  <text x="455" y="98" fill="#ff7700" font-size="10" font-family="monospace" opacity="0.9">Lateral condyle</text>
+  <text x="455" y="110" fill="#ff7700" font-size="10" font-family="monospace" opacity="0.9">(primary attention)</text>
+
+  <!-- Labels -->
+  <text x="14" y="22" fill="#444" font-size="9" font-family="monospace" letter-spacing="1">KNEE LATERAL VIEW — Grad-CAM XAI</text>
+  <text x="14" y="34" fill="#333" font-size="8" font-family="monospace">ConvNeXt-Tiny | Angle estimation | MAE: 1-2°</text>
+
+  <!-- R² badge -->
+  <rect x="490" y="308" width="138" height="24" rx="2" fill="none" stroke="#222" stroke-width="1"/>
+  <text x="500" y="324" fill="#555" font-size="9" font-family="monospace">R² &gt; 0.96 | MAE: 1°</text>
+</svg>

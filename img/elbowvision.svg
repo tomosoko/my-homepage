@@ -1,0 +1,83 @@
+<svg viewBox="0 0 640 340" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="340" fill="#080808" rx="4"/>
+
+  <!-- Subtle grid -->
+  <line x1="0" y1="170" x2="640" y2="170" stroke="#111" stroke-width="1"/>
+  <line x1="320" y1="0" x2="320" y2="340" stroke="#111" stroke-width="1"/>
+
+  <!-- Humerus shaft -->
+  <rect x="296" y="12" width="60" height="110" rx="16" fill="#151515" stroke="#b0b0b0" stroke-width="2" opacity="0.75"/>
+
+  <!-- Medial epicondyle -->
+  <ellipse cx="270" cy="148" rx="32" ry="20" fill="#131313" stroke="#b8b8b8" stroke-width="1.8" opacity="0.8"/>
+  <!-- Lateral epicondyle -->
+  <ellipse cx="382" cy="144" rx="28" ry="18" fill="#131313" stroke="#b0b0b0" stroke-width="1.8" opacity="0.75"/>
+
+  <!-- Trochlea -->
+  <ellipse cx="304" cy="168" rx="26" ry="20" fill="#121212" stroke="#c0c0c0" stroke-width="2" opacity="0.8"/>
+  <!-- Capitellum -->
+  <ellipse cx="362" cy="162" rx="22" ry="18" fill="#121212" stroke="#b8b8b8" stroke-width="1.8" opacity="0.8"/>
+
+  <!-- Olecranon (ulna) -->
+  <ellipse cx="296" cy="192" rx="20" ry="14" fill="#141414" stroke="#999" stroke-width="1.5" opacity="0.7"/>
+
+  <!-- Ulna shaft — angled down-left -->
+  <path d="M 276 200 L 240 320" stroke="#aaa" stroke-width="18" stroke-linecap="round" fill="none" opacity="0.3"/>
+  <path d="M 276 200 L 240 320" stroke="#bbb" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6"/>
+
+  <!-- Radial head -->
+  <ellipse cx="362" cy="188" rx="18" ry="14" fill="#141414" stroke="#999" stroke-width="1.5" opacity="0.7"/>
+
+  <!-- Radius shaft — angled down-right -->
+  <path d="M 368 198 L 400 320" stroke="#aaa" stroke-width="14" stroke-linecap="round" fill="none" opacity="0.3"/>
+  <path d="M 368 198 L 400 320" stroke="#bbb" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6"/>
+
+  <!-- === KEYPOINTS === -->
+  <!-- Lateral epicondyle -->
+  <circle cx="384" cy="144" r="8" fill="#ff8833" opacity="0.95"/>
+  <circle cx="384" cy="144" r="15" fill="none" stroke="#ff8833" stroke-width="1" opacity="0.35"/>
+  <!-- Medial epicondyle -->
+  <circle cx="268" cy="148" r="8" fill="#ff8833" opacity="0.95"/>
+  <circle cx="268" cy="148" r="15" fill="none" stroke="#ff8833" stroke-width="1" opacity="0.35"/>
+  <!-- Capitellum -->
+  <circle cx="362" cy="162" r="7" fill="#ffcc00" opacity="0.9"/>
+  <!-- Trochlea -->
+  <circle cx="304" cy="168" r="7" fill="#ffcc00" opacity="0.9"/>
+  <!-- Ulna distal -->
+  <circle cx="240" cy="320" r="6" fill="#66aaff" opacity="0.85"/>
+  <!-- Radius distal -->
+  <circle cx="400" cy="318" r="6" fill="#66aaff" opacity="0.85"/>
+
+  <!-- Humerus midpoint -->
+  <circle cx="325" cy="58" r="5" fill="#cc88ff" opacity="0.8"/>
+
+  <!-- === CARRYING ANGLE === -->
+  <line x1="325" y1="58" x2="325" y2="162" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <line x1="325" y1="162" x2="240" y2="320" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <!-- Carrying angle arc -->
+  <path d="M 325,185 A 23,23 0 0,1 312,208" fill="none" stroke="#ff8833" stroke-width="2" opacity="0.8"/>
+  <text x="288" y="222" fill="#ff8833" font-size="14" font-family="monospace" font-weight="bold">12.4°</text>
+  <text x="224" y="238" fill="#ff8833" font-size="9" font-family="monospace" opacity="0.7">Carrying angle</text>
+
+  <!-- === FLEXION ANGLE === -->
+  <line x1="325" y1="162" x2="400" y2="318" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <path d="M 348,185 A 28,28 0 0,0 362,207" fill="none" stroke="#66aaff" stroke-width="2" opacity="0.7"/>
+  <text x="365" y="210" fill="#66aaff" font-size="14" font-family="monospace" font-weight="bold">90.2°</text>
+  <text x="366" y="224" fill="#66aaff" font-size="9" font-family="monospace" opacity="0.7">Flexion angle</text>
+
+  <!-- Labels -->
+  <text x="14" y="22" fill="#444" font-size="9" font-family="monospace" letter-spacing="1">ELBOW AP VIEW — PHANTOM X-RAY</text>
+  <text x="14" y="34" fill="#333" font-size="8" font-family="monospace">YOLOv8-pose + ConvNeXt Dual Model</text>
+
+  <!-- Legend -->
+  <circle cx="14" cy="320" r="5" fill="#ff8833"/>
+  <text x="24" y="324" fill="#555" font-size="9" font-family="monospace">Epicondyle</text>
+  <circle cx="100" cy="320" r="5" fill="#ffcc00"/>
+  <text x="110" y="324" fill="#555" font-size="9" font-family="monospace">Articular surface</text>
+  <circle cx="224" cy="320" r="5" fill="#66aaff"/>
+  <text x="234" y="324" fill="#555" font-size="9" font-family="monospace">Distal shaft</text>
+
+  <!-- Dual model badge -->
+  <rect x="468" y="308" width="160" height="24" rx="2" fill="none" stroke="#222" stroke-width="1"/>
+  <text x="478" y="324" fill="#555" font-size="9" font-family="monospace">Dual Model Architecture</text>
+</svg>

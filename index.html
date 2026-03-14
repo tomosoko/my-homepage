@@ -7,7 +7,7 @@
     <meta name="description" content="高木滉平 — 診療放射線技師×AIエンジニア。YOLOv8-poseを用いたX線ポジショニングAIシステム開発。">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,6 +20,7 @@
                     <ul class="nav-links">
                         <li><a href="#about">About</a></li>
                         <li><a href="#projects">Projects</a></li>
+                        <li><a href="#presentations">Presentations</a></li>
                         <li><a href="#skills">Skills</a></li>
                         <li><a href="#contact">Contact</a></li>
                         <li><a href="https://github.com/tomosoko" target="_blank" class="nav-github">GitHub</a></li>
@@ -139,6 +140,10 @@
                     <div class="project-content">
                         <h3 class="project-title">OsteoVision</h3>
                         <p class="project-subtitle">膝関節X線ポジショニングAI — AI-powered Knee X-ray Angle Estimation & QA System</p>
+                        <div class="project-img-wrap">
+                            <img src="img/osteovision.svg" alt="OsteoVision — Knee X-ray with YOLOv8-pose keypoints and angle measurement" class="project-img">
+                            <p class="project-img-caption">合成DRR（擬似X線）画像 + YOLOv8-poseキーポイント検出・角度計測</p>
+                        </div>
                         <div class="project-grid">
                             <div class="project-desc">
                                 <p>膝関節X線画像からYOLOv8-poseでキーポイントを検出し、関節角度・回旋量を自動推定。ポジショニング品質を定量的にフィードバックするシステム。</p>
@@ -183,6 +188,10 @@
                     <div class="project-content">
                         <h3 class="project-title">ElbowVision</h3>
                         <p class="project-subtitle">肘X線ポジショニングAI — AI Positioning Guidance for Elbow X-ray Imaging</p>
+                        <div class="project-img-wrap">
+                            <img src="img/elbowvision.svg" alt="ElbowVision — Elbow X-ray with carrying angle and flexion angle measurement" class="project-img">
+                            <p class="project-img-caption">実ファントムX線画像 + キーポイント検出・外反角（Carrying angle）・屈曲角計測</p>
+                        </div>
                         <div class="project-grid">
                             <div class="project-desc">
                                 <p>肘X線画像から外反角（Carrying angle）・屈曲角をAIで推定し、ポジショニング補正アドバイスをリアルタイム提供するシステム。</p>
@@ -224,6 +233,10 @@
                         </div>
                         <h4 class="earlier-title">膝関節X線撮影における再撮影判断支援のための深層学習プログラムの開発</h4>
                         <p class="earlier-en">Deep Learning Program for Retake Decision Support in Knee X-ray Imaging</p>
+                        <div class="project-img-wrap" style="margin-bottom:1.5rem;">
+                            <img src="img/convnext-gradcam.svg" alt="ConvNeXt Grad-CAM visualization showing attention on lateral femoral condyle" class="project-img">
+                            <p class="project-img-caption">Grad-CAM可視化 — 熟練技師と同様に大腿骨顆部（lateral condyle）に注目</p>
+                        </div>
                         <p>ConvNeXt-Tinyを用いて膝関節側面像の角度ズレを自動推定。R² > 0.96、MAE 約1〜2°を達成。Grad-CAMにより熟練技師と同様の注視領域（大腿骨顆部）を学習していることを確認。現在のOsteoVision（YOLOv8-pose版）の前身研究。</p>
                         <div class="earlier-metrics">
                             <span>R² &gt; 0.96</span>
@@ -237,10 +250,33 @@
             </div>
         </section>
 
+        <!-- ── PRESENTATIONS ── -->
+        <section id="presentations" class="section">
+            <div class="container">
+                <div class="section-label">03 — Academic Presentations</div>
+                <div class="pres-list">
+                    <div class="pres-item">
+                        <div class="pres-year">2025</div>
+                        <div class="pres-body">
+                            <div class="pres-conf">中四国放射線学術大会</div>
+                            <h3 class="pres-title">膝関節X線撮影における再撮影判断支援のための深層学習プログラムの開発</h3>
+                            <p class="pres-en">Development of a Deep Learning Program for Retake Decision Support in Knee X-ray Imaging</p>
+                            <div class="pres-tags">
+                                <span class="tag">ConvNeXt-Tiny</span>
+                                <span class="tag">Grad-CAM</span>
+                                <span class="tag">Phantom Study</span>
+                                <span class="tag">DRR Synthesis</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- ── SKILLS ── -->
         <section id="skills" class="section">
             <div class="container">
-                <div class="section-label">03 — Skills & Stack</div>
+                <div class="section-label">04 — Skills & Stack</div>
                 <div class="skills-grid">
                     <div class="skill-group">
                         <h3 class="skill-group-title">AI / Deep Learning</h3>
@@ -282,7 +318,7 @@
         <!-- ── CONTACT ── -->
         <section id="contact" class="section section--contact">
             <div class="container">
-                <div class="section-label">04 — Contact</div>
+                <div class="section-label">05 — Contact</div>
                 <div class="contact-layout">
                     <h2 class="contact-heading">Let's Connect</h2>
                     <p class="contact-desc">研究・共同開発・採用に関するお問い合わせはお気軽にどうぞ。</p>

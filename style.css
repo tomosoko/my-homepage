@@ -2,17 +2,18 @@
    ROOT & RESET
 ───────────────────────────────────────────── */
 :root {
-    --bg:      #fafafa;
-    --bg2:     #f0f0f0;
-    --bg3:     #e8e8e8;
-    --text:    #0a0a0a;
-    --muted:   #777;
-    --subtle:  #ebebeb;
-    --border:  rgba(0,0,0,0.08);
-    --border2: rgba(0,0,0,0.35);
-    --font-h:  'Syne', sans-serif;
-    --font-b:  'Inter', sans-serif;
-    --font-m:  'Space Mono', monospace;
+    --bg:       #fafafa;
+    --bg2:      #f0f0f0;
+    --bg3:      #e8e8e8;
+    --text:     #0a0a0a;
+    --muted:    #777;
+    --subtle:   #ebebeb;
+    --border:   rgba(0,0,0,0.08);
+    --border2:  rgba(0,0,0,0.35);
+    --font-h:   'Syne', sans-serif;
+    --font-hero:'Cormorant Garamond', Georgia, serif;
+    --font-b:   'Inter', sans-serif;
+    --font-m:   'Space Mono', monospace;
 }
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -111,16 +112,18 @@ body {
 }
 
 .hero-title {
-    font-family: var(--font-h);
-    font-size: clamp(3rem, 7.5vw, 7.5rem);
-    font-weight: 800; line-height: 0.95; letter-spacing: -0.03em;
+    font-family: var(--font-hero);
+    font-size: clamp(4rem, 9vw, 9.5rem);
+    font-weight: 700; line-height: 0.9; letter-spacing: -0.01em;
+    font-style: italic;
     margin-bottom: 3.5rem;
     display: flex; flex-direction: column; gap: 0.05em;
 }
 .hero-name { display: block; color: var(--text); }
 .hero-name--outline {
     color: transparent;
-    -webkit-text-stroke: 2px rgba(0,0,0,0.25);
+    -webkit-text-stroke: 1.5px rgba(0,0,0,0.3);
+    font-style: normal;
 }
 
 .hero-bottom {
@@ -312,6 +315,21 @@ body {
 }
 .project-link:hover { border-color: var(--text); }
 
+/* Project image */
+.project-img-wrap {
+    margin-bottom: 2.5rem;
+    border: 1px solid var(--border); border-radius: 4px; overflow: hidden;
+    background: #080808;
+}
+.project-img {
+    width: 100%; height: auto; display: block;
+}
+.project-img-caption {
+    font-family: var(--font-m); font-size: 0.68rem; color: #555;
+    padding: 0.6rem 1rem; border-top: 1px solid #1a1a1a;
+    background: #0d0d0d; letter-spacing: 0.04em;
+}
+
 /* Earlier Research */
 .earlier-work { padding: 4rem 0 0; }
 .earlier-label {
@@ -337,6 +355,32 @@ body {
     color: var(--muted); letter-spacing: 0.04em;
 }
 .earlier-metrics span::before { content: '· '; }
+
+/* ─────────────────────────────────────────────
+   PRESENTATIONS
+───────────────────────────────────────────── */
+.pres-list { display: flex; flex-direction: column; gap: 0; }
+.pres-item {
+    display: grid; grid-template-columns: 100px 1fr; gap: 3rem;
+    padding: 3rem 0; border-top: 1px solid var(--border);
+    align-items: start;
+}
+.pres-year {
+    font-family: var(--font-m); font-size: 0.78rem; color: var(--muted);
+    letter-spacing: 0.08em; padding-top: 0.3rem;
+}
+.pres-conf {
+    font-family: var(--font-m); font-size: 0.72rem; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem;
+}
+.pres-title {
+    font-family: var(--font-h); font-size: 1.25rem; font-weight: 700;
+    line-height: 1.4; margin-bottom: 0.4rem;
+}
+.pres-en {
+    font-size: 0.85rem; color: var(--muted); margin-bottom: 1.2rem; line-height: 1.6;
+}
+.pres-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 
 /* ─────────────────────────────────────────────
    SKILLS
