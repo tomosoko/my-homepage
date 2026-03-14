@@ -2,14 +2,14 @@
    ROOT & RESET
 ───────────────────────────────────────────── */
 :root {
-    --bg:      #000;
-    --bg2:     #0d0d0d;
-    --bg3:     #161616;
-    --text:    #fff;
-    --muted:   #666;
-    --subtle:  #1a1a1a;
-    --border:  rgba(255,255,255,0.07);
-    --border2: rgba(255,255,255,0.22);
+    --bg:      #fafafa;
+    --bg2:     #f0f0f0;
+    --bg3:     #e8e8e8;
+    --text:    #0a0a0a;
+    --muted:   #777;
+    --subtle:  #ebebeb;
+    --border:  rgba(0,0,0,0.08);
+    --border2: rgba(0,0,0,0.35);
     --font-h:  'Syne', sans-serif;
     --font-b:  'Inter', sans-serif;
     --font-m:  'Space Mono', monospace;
@@ -36,7 +36,7 @@ body {
     position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
     padding: 1.2rem 0;
     border-bottom: 1px solid var(--border);
-    background: rgba(0,0,0,0.92);
+    background: rgba(250,250,250,0.92);
     backdrop-filter: blur(16px);
 }
 .header-inner {
@@ -61,7 +61,7 @@ body {
     color: var(--text) !important;
     border: 1px solid var(--border2);
     padding: 0.35rem 1rem; border-radius: 2px;
-    transition: background .2s !important;
+    transition: background .2s, color .2s !important;
 }
 .nav-github:hover { background: var(--text) !important; color: var(--bg) !important; }
 
@@ -107,7 +107,7 @@ body {
 .hero-name { display: block; color: var(--text); }
 .hero-name--outline {
     color: transparent;
-    -webkit-text-stroke: 1.5px rgba(255,255,255,0.35);
+    -webkit-text-stroke: 2px rgba(0,0,0,0.25);
 }
 
 .hero-bottom {
@@ -126,7 +126,7 @@ body {
     text-decoration: none; border-radius: 2px; transition: all .2s; cursor: pointer;
 }
 .btn-white { background: var(--text); color: var(--bg); border: 1px solid var(--text); }
-.btn-white:hover { background: #ddd; border-color: #ddd; }
+.btn-white:hover { background: #222; border-color: #222; }
 .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border2); }
 .btn-outline:hover { background: var(--subtle); }
 
@@ -153,7 +153,7 @@ body {
     position: absolute; right: -3%; bottom: -12%;
     font-family: var(--font-h); font-size: clamp(8rem, 18vw, 20rem);
     font-weight: 800; letter-spacing: -0.05em;
-    color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,0.035);
+    color: transparent; -webkit-text-stroke: 1px rgba(0,0,0,0.06);
     pointer-events: none; user-select: none; white-space: nowrap; z-index: 0;
 }
 
@@ -166,7 +166,7 @@ body {
 }
 .section-label {
     font-family: var(--font-m); font-size: 0.7rem;
-    color: var(--muted); letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--text); letter-spacing: 0.18em; text-transform: uppercase;
     margin-bottom: 5rem;
 }
 
@@ -230,8 +230,8 @@ body {
 .project-meta { display: flex; flex-direction: column; gap: 1.5rem; }
 .project-num {
     font-family: var(--font-h); font-size: 5.5rem; font-weight: 800;
-    color: var(--bg3); letter-spacing: -0.05em; line-height: 1;
-    -webkit-text-stroke: 1px rgba(255,255,255,0.08);
+    color: transparent; letter-spacing: -0.05em; line-height: 1;
+    -webkit-text-stroke: 1.5px rgba(0,0,0,0.2);
 }
 .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 .tag {
@@ -387,7 +387,7 @@ body {
 ───────────────────────────────────────────── */
 .mobile-overlay {
     position: fixed; inset: 0; z-index: 300;
-    background: #000;
+    background: var(--bg);
     display: flex; flex-direction: column;
     align-items: center; justify-content: center;
     opacity: 0; pointer-events: none; transition: opacity .3s;
