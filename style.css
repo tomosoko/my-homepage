@@ -55,6 +55,41 @@
     font-family: var(--font-en);
 }
 
+.tag-public {
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+.tag-wip {
+    background: rgba(251, 191, 36, 0.15);
+    color: #fbbf24;
+    border-color: rgba(251, 191, 36, 0.3);
+}
+
+.project-links {
+    margin-top: 1.5rem;
+}
+
+.btn-sm {
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+}
+
+.contact-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.github-link {
+    color: var(--accent-cyan) !important;
+    border: 1px solid rgba(34, 211, 238, 0.3);
+    border-radius: 50px;
+    padding: 0.3rem 0.9rem !important;
+}
+
 .research-card h3 {
     font-size: 1.8rem;
     margin-bottom: 0.5rem;
