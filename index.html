@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kohei Takagi | Radiologic Technologist & AI Researcher</title>
+    <meta name="description"
+        content="高木滉平（Kohei Takagi）のポートフォリオ。NHO福山医療センター所属の放射線技師兼AI研究者。ディープラーニングを用いたX線撮影支援システムの開発など。">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Dynamic Background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <header class="glass-header">
+        <div class="container header-container">
+            <div class="logo">K.Takagi<span class="accent">.AI</span></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-btn" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="badge">Radiology × Deep Learning</div>
+                    <h1>Researching for <br><span class="gradient-text">Precision Medicine</span></h1>
+                    <p class="subtitle">診療放射線技師の視点と、最新のAI技術を融合。<br>画像診断支援と教育のためのソリューションを開発。</p>
+                    <div class="auth-info">
+                        <span class="name">Kohei Takagi</span>
+                        <span class="separator">|</span>
+                        <span class="role">Radiologic Technologist / AI Researcher</span>
+                    </div>
+                    <div class="cta-group">
+                        <a href="#research" class="btn btn-primary">View Latest Research</a>
+                        <a href="#contact" class="btn btn-secondary">Collaborate</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Biography</span>
+                    <h2 class="section-title">Clinical Insight meets AI</h2>
+                </div>
+                <div class="glass-card about-card wide-card">
+                    <div class="about-grid">
+                        <div class="about-text">
+                            <h3>高木 滉平 / Kohei Takagi</h3>
+                            <p class="affiliation">NHO Fukuyama Medical Center, Dept. of Radiology</p>
+                            <p>現役の診療放射線技師として臨床現場に立ちながら、医療画像の質の向上と、撮影技術の教育支援を目指して研究を行っています。</p>
+                            <p>特に「再撮影（Retake）」の原因となるポジショニングのズレを、ディープラーニング（ConvNeXt等）を用いて定量的に解析するシステムの開発に注力。経験則に頼りがちな撮影技術を数値化し、客観的なフィードバックを可能にすることで、被ばく低減と医療安全に貢献します。
+                            </p>
+                        </div>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-number">RT</span>
+                                <span class="stat-label">Radiologic Technologist</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">M.L.</span>
+                                <span class="stat-label">Machine Learning</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Section (New!) -->
+        <section id="research" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Featured Work</span>
+                    <h2 class="section-title">Latest Research</h2>
+                </div>
+
+                <!-- Abstract Card -->
+                <div class="glass-card research-card">
+                    <div class="research-header">
+                        <span class="tag">Deep Learning</span>
+                        <span class="tag">X-ray</span>
+                        <span class="date">2025</span>
+                    </div>
+                    <h3>膝関節X線撮影における再撮影判断支援のための<br>深層学習プログラムの開発</h3>
+                    <h4 class="research-en-title">Deep Learning Program for Retake Decision Support in Knee X-ray
+                        Imaging</h4>
+
+                    <div class="research-content grid-2">
+                        <div class="research-desc">
+                            <p><strong>【目的】</strong> 膝関節側面像における角度ズレを自動かつ定量的に推定し、再撮影判断支援および技師教育ツールとしての有用性を検討。</p>
+                            <p><strong>【手法】</strong></p>
+                            <ul class="method-list">
+                                <li><strong>Model:</strong> ConvNeXt-Tiny (Pre-trained on ImageNet-1k)</li>
+                                <li><strong>Technique:</strong> Test-Time Augmentation (TTA) for robust inference</li>
+                                <li><strong>XAI:</strong> Grad-CAM for visualizing clinical attention areas</li>
+                                <li><strong>Data:</strong> Phantom simulation dataset (671 images)</li>
+                            </ul>
+                            <p><strong>【結果】</strong> 決定係数 R² > 0.96, MAE
+                                約1~2°の精度を達成。Grad-CAMにより、熟練技師と同様の注視領域（大腿骨顆部重なり等）を学習していることを確認。</p>
+                        </div>
+                        <div class="research-visual">
+                            <!-- Abstract Visual Representation (CSS only) -->
+                            <div class="visual-box">
+                                <div class="visual-layer layer-1">Input X-ray</div>
+                                <div class="visual-arrow">⬇</div>
+                                <div class="visual-layer layer-2">ConvNeXt</div>
+                                <div class="visual-arrow">⬇</div>
+                                <div class="visual-layer layer-3">
+                                    <span>Rotation X: 1.2°</span>
+                                    <span>Rotation Y: 0.5°</span>
+                                </div>
+                                <div class="visual-caption">Automated Angle Estimation</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Simulator Section (New!) -->
+        <section id="simulator" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Interactive Demo</span>
+                    <h2 class="section-title">AI Feature Extraction Simulator</h2>
+                </div>
+                <div class="glass-card simulator-card">
+                    <div class="grid-2 simulator-layout">
+                        <!-- Left side: Image and Viewport -->
+                        <div class="sim-viewport">
+                            <div class="sim-image-container">
+                                <img src="/Users/kohei/.gemini/antigravity/brain/a6ae166b-06ff-4805-9d29-44ecbcb0a008/knee_xray_1772269369187.png" alt="X-ray" id="sim-image">
+                                
+                                <!-- Overlay for scanning -->
+                                <div class="sim-scanner" id="sim-scanner"></div>
+                                
+                                <!-- Landmarks overlays (initially hidden) -->
+                                <div class="sim-landmarks" id="sim-landmarks">
+                                    <div class="point point-femur" data-label="Femur Condyle">
+                                        <div class="point-ripple"></div>
+                                    </div>
+                                    <div class="point point-tibia" data-label="Tibial Plateau">
+                                        <div class="point-ripple"></div>
+                                    </div>
+                                    <div class="point point-patella" data-label="Patella">
+                                        <div class="point-ripple"></div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Bounding Box -->
+                                <div class="sim-bbox" id="sim-bbox">
+                                    <div class="bbox-label">Joint Space: 98.4%</div>
+                                </div>
+                                <div class="sim-grid-overlay"></div>
+                            </div>
+                        </div>
+
+                        <!-- Right side: Control Panel -->
+                        <div class="sim-controls">
+                            <h3>Analysis Console</h3>
+                            <p class="sim-desc">ディープラーニングモデルを用いて、膝関節X線画像から特定の解剖学的指標を自動抽出し、診断精度の向上と学習用データ作成をシミュレーションします。</p>
+                            
+                            <div class="sim-steps">
+                                <div class="step-indicator active" id="step-1">
+                                    <div class="step-circle">1</div>
+                                    <div class="step-text">Image Loaded</div>
+                                </div>
+                                <div class="step-indicator" id="step-2">
+                                    <div class="step-circle">2</div>
+                                    <div class="step-text">Extract Features</div>
+                                </div>
+                                <div class="step-indicator" id="step-3">
+                                    <div class="step-circle">3</div>
+                                    <div class="step-text">Verify Target Data</div>
+                                </div>
+                            </div>
+
+                            <div class="sim-actions">
+                                <button class="btn btn-primary sim-btn" id="btn-extract">Run Feature Extraction</button>
+                                <button class="btn btn-secondary sim-btn" id="btn-verify" disabled>Verify Data</button>
+                                <button class="btn btn-secondary sim-btn" id="btn-reset" disabled>Reset</button>
+                            </div>
+
+                            <div class="sim-console">
+                                <div class="console-header">
+                                    <span class="dot red"></span>
+                                    <span class="dot yellow"></span>
+                                    <span class="dot green"></span>
+                                    System Output
+                                </div>
+                                <div class="console-body" id="sim-console-out">
+                                    > System initialized. Ready for image analysis...<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Technical Stack</span>
+                    <h2 class="section-title">Tools & Technologies</h2>
+                </div>
+                <div class="grid-3">
+                    <div class="card glass-card skill-card tech-card">
+                        <div class="card-glow"></div>
+                        <div class="icon-box">🧠</div>
+                        <h3>AI / Deep Learning</h3>
+                        <ul class="skill-list">
+                            <li><strong>PyTorch 2.0</strong></li>
+                            <li><strong>ConvNeXt / ViT</strong></li>
+                            <li><strong>Grad-CAM (XAI)</strong></li>
+                            <li>WandB / TensorBoard</li>
+                        </ul>
+                    </div>
+                    <div class="card glass-card skill-card tech-card">
+                        <div class="card-glow"></div>
+                        <div class="icon-box">🐍</div>
+                        <h3>Development</h3>
+                        <ul class="skill-list">
+                            <li>Python Data Science Stack</li>
+                            <li>OpenCV / Albumentations</li>
+                            <li>Google Colab / Jupyter</li>
+                            <li>Git / Docker</li>
+                        </ul>
+                    </div>
+                    <div class="card glass-card skill-card tech-card">
+                        <div class="card-glow"></div>
+                        <div class="icon-box">☢️</div>
+                        <h3>Radiology</h3>
+                        <ul class="skill-list">
+                            <li>X-ray Positioning Theory</li>
+                            <li>Phantom Simulation</li>
+                            <li>DICOM Standard</li>
+                            <li>Radiation Protection</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Connect</span>
+                    <h2 class="section-title">Contact</h2>
+                </div>
+                <div class="glass-card contact-card">
+                    <p>研究の詳細に関するお問い合わせや、共同研究のご相談はこちらまで。</p>
+                    <a href="mailto:your.email@example.com" class="btn btn-primary">Send Email</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <span class="copyright">&copy; 2025 Kohei Takagi. All rights reserved.</span>
+                <span class="tech-stack">Powered by React & Vite (Concept)</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
