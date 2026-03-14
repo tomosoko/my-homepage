@@ -122,41 +122,42 @@ function initCanvas() {
 function initMobileMenu() {
     const mobileBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
+    if (!mobileBtn || !navLinks) return;
 
-    if (mobileBtn && navLinks) {
-        mobileBtn.addEventListener('click', () => {
-            const isOpened = navLinks.classList.toggle('active');
+    // Create overlay
+    const overlay = document.createElement('div');
+    overlay.className = 'mobile-overlay';
+    overlay.innerHTML = `
+        <button class="mobile-overlay-close" aria-label="Close menu">✕</button>
+        <nav class="mobile-nav">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+            <a href="https://github.com/tomosoko" target="_blank">GitHub</a>
+        </nav>
+    `;
+    document.body.appendChild(overlay);
 
-            // Simple inline style toggle for quick implementation
-            if (navLinks.style.display === 'flex') {
-                navLinks.style.display = 'none';
-            } else {
-                Object.assign(navLinks.style, {
-                    display: 'flex',
-                    flexDirection: 'column',
-                    position: 'fixed',
-                    top: '0',
-                    left: '0',
-                    width: '100vw',
-                    height: '100vh',
-                    background: 'rgba(2, 6, 23, 0.98)',
-                    zIndex: '99',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    padding: '0'
-                });
-            }
-        });
+    const closeBtn = overlay.querySelector('.mobile-overlay-close');
 
-        // Close menu when link is clicked
-        navLinks.querySelectorAll('a').forEach(a => {
-            a.addEventListener('click', () => {
-                if (window.innerWidth < 768) {
-                    navLinks.style.display = 'none';
-                }
-            });
-        });
+    function openMenu() {
+        overlay.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
     }
+    function closeMenu() {
+        overlay.classList.remove('is-open');
+        document.body.style.overflow = '';
+    }
+
+    mobileBtn.addEventListener('click', openMenu);
+    closeBtn.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closeMenu();
+    });
+    overlay.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', closeMenu);
+    });
 }
 
 function initScrollAnimations() {
