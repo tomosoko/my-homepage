@@ -1,86 +1,113 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kohei Takagi | Radiologic Technologist & AI Researcher</title>
-    <meta name="description" content="高木滉平のポートフォリオ。放射線技師兼AI開発者。YOLOv8-poseを用いたX線撮影支援AIシステムを開発。">
+    <title>Kohei Takagi — Radiologic Technologist & AI Developer</title>
+    <meta name="description" content="高木滉平 — 診療放射線技師×AIエンジニア。YOLOv8-poseを用いたX線ポジショニングAIシステム開発。">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <canvas id="bg-canvas"></canvas>
 
-    <header class="glass-header">
-        <div class="container header-container">
-            <div class="logo">K.Takagi<span class="accent">.AI</span></div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="https://github.com/tomosoko" target="_blank" class="github-link">GitHub</a></li>
-                </ul>
-                <button class="mobile-menu-btn" aria-label="Toggle menu"><span></span><span></span></button>
-            </nav>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="#" class="logo">KT<span class="logo-dot">.</span></a>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="https://github.com/tomosoko" target="_blank" class="nav-github">GitHub</a></li>
+                    </ul>
+                    <button class="mobile-menu-btn" aria-label="Toggle menu">
+                        <span></span><span></span>
+                    </button>
+                </nav>
+            </div>
         </div>
     </header>
 
     <main>
-        <section id="hero" class="hero-section">
-            <div class="container hero-container">
-                <div class="hero-content">
-                    <div class="badge">Radiology × Deep Learning</div>
-                    <h1>Building AI for<br><span class="gradient-text">Clinical Radiology</span></h1>
-                    <p class="subtitle">診療放射線技師の視点と最新AIを融合。<br>X線撮影支援・ポジショニングQAシステムを開発中。</p>
-                    <div class="auth-info">
-                        <span class="name">Kohei Takagi</span>
-                        <span class="separator">|</span>
-                        <span class="role">Radiologic Technologist / AI Developer</span>
+
+        <!-- ── HERO ── -->
+        <section id="hero" class="hero">
+            <div class="container">
+                <div class="hero-inner">
+                    <div class="hero-tags">
+                        <span class="tag-pill">Radiologic Technologist</span>
+                        <span class="tag-pill">AI Developer</span>
+                        <span class="tag-pill">診療放射線技師</span>
                     </div>
-                    <div class="cta-group">
-                        <a href="#projects" class="btn btn-primary">View Projects</a>
-                        <a href="https://github.com/tomosoko" target="_blank" class="btn btn-secondary">GitHub</a>
+                    <h1 class="hero-title">
+                        <span class="hero-name">Kohei</span>
+                        <span class="hero-name hero-name--outline">Takagi</span>
+                    </h1>
+                    <div class="hero-bottom">
+                        <p class="hero-desc">
+                            診療放射線技師の臨床知識と最新のDeep Learningを融合。<br>
+                            患者データ不要・倫理委員会フリーのX線AI開発パイプラインを独自確立。
+                        </p>
+                        <div class="hero-cta">
+                            <a href="#projects" class="btn btn-white">View Projects</a>
+                            <a href="https://github.com/tomosoko" target="_blank" class="btn btn-outline">GitHub →</a>
+                        </div>
+                    </div>
+                    <div class="hero-scroll">
+                        <span>Scroll</span>
+                        <div class="scroll-line"></div>
                     </div>
                 </div>
             </div>
+            <div class="hero-bg-text" aria-hidden="true">RADIOLOGY</div>
         </section>
 
+        <!-- ── ABOUT ── -->
         <section id="about" class="section">
             <div class="container">
-                <div class="section-header">
-                    <span class="section-subtitle">Biography</span>
-                    <h2 class="section-title">Clinical Insight meets AI</h2>
-                </div>
-                <div class="glass-card about-card wide-card">
-                    <div class="about-grid">
-                        <div class="about-text">
-                            <h3>高木 滉平 / Kohei Takagi</h3>
-                            <p class="affiliation">国立病院機構 福山医療センター 放射線科<br><span class="affiliation-sub">NHO Fukuyama Medical Center, Dept. of Radiology &nbsp;|&nbsp; TEL: 084-922-0001</span></p>
-                            <p>現役の診療放射線技師として臨床現場に立ちながら、医療画像AIシステムの独自開発を行っています。</p>
-                            <p>YOLOv8-poseによるキーポイント検出と幾何学的角度計算を組み合わせ、X線撮影のポジショニング品質を定量化するシステムを構築。合成DRR（擬似X線）を自動生成するパイプラインにより、患者データなし・倫理委員会不要でモデルを訓練する手法を確立しました。</p>
-                        </div>
-                        <div class="stats-grid">
-                            <div class="stat-item">
-                                <span class="stat-number">99.8%</span>
-                                <span class="stat-label">mAP50 (OsteoVision)</span>
+                <div class="section-label">01 — About</div>
+                <div class="about-layout">
+                    <div class="about-left">
+                        <h2 class="about-heading">Clinical Insight<br>meets<br>Deep Learning</h2>
+                        <div class="divider"></div>
+                        <p class="about-org">
+                            国立病院機構<br>
+                            <strong>福山医療センター</strong><br>
+                            放射線科
+                        </p>
+                        <p class="about-org-sub">NHO Fukuyama Medical Center, Dept. of Radiology</p>
+                        <p class="about-tel">TEL: 084-922-0001</p>
+                    </div>
+                    <div class="about-right">
+                        <p class="about-lead">
+                            現役の診療放射線技師として臨床現場に立ちながら、医療画像AIの独自開発に取り組んでいます。
+                        </p>
+                        <p>
+                            YOLOv8-poseによるキーポイント検出と幾何学的角度計算を組み合わせ、X線撮影のポジショニング品質を定量評価するシステムを構築。合成DRR（擬似X線）を自動生成するパイプラインにより、<strong>患者データなし・倫理委員会不要</strong>でモデルを訓練できる手法を独自に確立しました。
+                        </p>
+                        <p>
+                            「現場を知るエンジニア」として、臨床で本当に必要とされるAIシステムを開発することをミッションとしています。
+                        </p>
+                        <div class="about-stats">
+                            <div class="stat">
+                                <div class="stat-num">99.8%</div>
+                                <div class="stat-lbl">mAP50<br>OsteoVision</div>
                             </div>
-                            <div class="stat-item">
-                                <span class="stat-number">2+</span>
-                                <span class="stat-label">Active AI Projects</span>
+                            <div class="stat">
+                                <div class="stat-num">0</div>
+                                <div class="stat-lbl">Patient Data<br>Required</div>
                             </div>
-                            <div class="stat-item">
-                                <span class="stat-number">RT</span>
-                                <span class="stat-label">Radiologic Technologist</span>
+                            <div class="stat">
+                                <div class="stat-num">2+</div>
+                                <div class="stat-lbl">Active AI<br>Projects</div>
                             </div>
-                            <div class="stat-item">
-                                <span class="stat-number">0</span>
-                                <span class="stat-label">Patient Data Required</span>
+                            <div class="stat">
+                                <div class="stat-num">RT</div>
+                                <div class="stat-lbl">Certified<br>Radiologic Tech</div>
                             </div>
                         </div>
                     </div>
@@ -88,180 +115,196 @@
             </div>
         </section>
 
+        <!-- ── PROJECTS ── -->
         <section id="projects" class="section">
             <div class="container">
-                <div class="section-header">
-                    <span class="section-subtitle">Featured Work</span>
-                    <h2 class="section-title">Projects</h2>
-                </div>
+                <div class="section-label">02 — Projects</div>
 
-                <div class="glass-card research-card">
-                    <div class="research-header">
-                        <span class="tag">YOLOv8-pose</span>
-                        <span class="tag">FastAPI</span>
-                        <span class="tag">Next.js</span>
-                        <span class="tag tag-public">Public</span>
-                    </div>
-                    <h3>OsteoVision — 膝関節X線ポジショニングAI</h3>
-                    <h4 class="research-en-title">AI-powered Knee X-ray Angle Estimation & Positioning QA System</h4>
-                    <div class="research-content grid-2">
-                        <div class="research-desc">
-                            <p><strong>【概要】</strong> 膝関節X線画像からYOLOv8-poseでキーポイントを検出し、関節角度・回旋量を自動推定。ポジショニング品質を定量的にフィードバックするシステム。</p>
-                            <ul class="method-list">
-                                <li><strong>合成DRR自動生成:</strong> OsteoSynthで720枚の訓練データを生成（患者データ不要）</li>
-                                <li><strong>精度:</strong> mAP50 = 99.8%（633枚で訓練）</li>
-                                <li><strong>XAI:</strong> Grad-CAMによる注視領域可視化</li>
-                                <li><strong>CI/CD:</strong> GitHub Actions + Docker</li>
-                            </ul>
+                <!-- OsteoVision -->
+                <div class="project-item">
+                    <div class="project-meta">
+                        <span class="project-num">01</span>
+                        <div class="project-tags">
+                            <span class="tag">YOLOv8-pose</span>
+                            <span class="tag">FastAPI</span>
+                            <span class="tag">Next.js</span>
+                            <span class="tag">Docker</span>
+                            <span class="tag tag-live">Public</span>
                         </div>
-                        <div class="research-visual">
-                            <div class="visual-box">
-                                <div class="visual-layer layer-1">X-ray Input</div>
-                                <div class="visual-arrow">⬇</div>
-                                <div class="visual-layer layer-2">YOLOv8-pose</div>
-                                <div class="visual-arrow">⬇</div>
-                                <div class="visual-layer layer-3">
-                                    <span>Angle: 172.3°</span>
-                                    <span>Rotation: 2.1°</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">OsteoVision</h3>
+                        <p class="project-subtitle">膝関節X線ポジショニングAI — AI-powered Knee X-ray Angle Estimation & QA System</p>
+                        <div class="project-grid">
+                            <div class="project-desc">
+                                <p>膝関節X線画像からYOLOv8-poseでキーポイントを検出し、関節角度・回旋量を自動推定。ポジショニング品質を定量的にフィードバックするシステム。</p>
+                                <ul class="feat-list">
+                                    <li><span class="feat-key">合成DRR自動生成</span>OsteoSynthで720枚の訓練データを生成（患者データ不要）</li>
+                                    <li><span class="feat-key">精度</span>mAP50 = 99.8%（633枚で訓練）</li>
+                                    <li><span class="feat-key">XAI</span>Grad-CAMによる注視領域可視化</li>
+                                    <li><span class="feat-key">CI/CD</span>GitHub Actions + Docker</li>
+                                </ul>
+                            </div>
+                            <div class="project-visual">
+                                <div class="metric-card">
+                                    <div class="metric-flow">
+                                        <div class="flow-step">X-ray Input</div>
+                                        <div class="flow-arrow">↓</div>
+                                        <div class="flow-step flow-step--accent">YOLOv8-pose</div>
+                                        <div class="flow-arrow">↓</div>
+                                        <div class="flow-step flow-step--result">
+                                            <div>Angle: 172.3°</div>
+                                            <div>Rotation: 2.1°</div>
+                                        </div>
+                                    </div>
+                                    <div class="metric-badge">mAP50 <strong>99.8%</strong></div>
                                 </div>
-                                <div class="visual-caption">mAP50: 99.8%</div>
                             </div>
                         </div>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/tomosoko/OsteoVision" target="_blank" class="btn btn-secondary btn-sm">GitHub →</a>
+                        <a href="https://github.com/tomosoko/OsteoVision" target="_blank" class="project-link">View on GitHub →</a>
                     </div>
                 </div>
 
-                <div class="glass-card research-card" style="margin-top: 2rem;">
-                    <div class="research-header">
-                        <span class="tag">YOLOv8-pose</span>
-                        <span class="tag">ConvNeXt</span>
-                        <span class="tag">Phantom X-ray</span>
-                        <span class="tag tag-wip">In Progress</span>
-                    </div>
-                    <h3>ElbowVision — 肘X線ポジショニングAIガイド</h3>
-                    <h4 class="research-en-title">AI Positioning Guidance System for Elbow X-ray Imaging</h4>
-                    <div class="research-content grid-2">
-                        <div class="research-desc">
-                            <p><strong>【概要】</strong> 肘X線画像から外反角（Carrying angle）・屈曲角をAIで推定し、ポジショニング補正アドバイスをリアルタイム提供するシステム。</p>
-                            <ul class="method-list">
-                                <li><strong>実ファントムX線使用:</strong> ドメインギャップ問題を根本解決</li>
-                                <li><strong>倫理委員会不要:</strong> ファントム（人体模型）のみで研究可能</li>
-                                <li><strong>デュアルモデル:</strong> YOLOv8-pose（主）+ ConvNeXt（セカンドオピニオン）</li>
-                                <li><strong>エッジバリデーション:</strong> Canny + HoughLinesPで骨軸を独立検出</li>
-                            </ul>
+                <!-- ElbowVision -->
+                <div class="project-item">
+                    <div class="project-meta">
+                        <span class="project-num">02</span>
+                        <div class="project-tags">
+                            <span class="tag">YOLOv8-pose</span>
+                            <span class="tag">ConvNeXt</span>
+                            <span class="tag">Phantom X-ray</span>
+                            <span class="tag tag-wip">In Progress</span>
                         </div>
-                        <div class="research-visual">
-                            <div class="visual-box">
-                                <div class="visual-layer layer-1">Elbow X-ray</div>
-                                <div class="visual-arrow">⬇</div>
-                                <div class="visual-layer layer-2">YOLOv8 + ConvNeXt</div>
-                                <div class="visual-arrow">⬇</div>
-                                <div class="visual-layer layer-3">
-                                    <span>Carrying: 12.4°</span>
-                                    <span>Flexion: 90.2°</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">ElbowVision</h3>
+                        <p class="project-subtitle">肘X線ポジショニングAI — AI Positioning Guidance for Elbow X-ray Imaging</p>
+                        <div class="project-grid">
+                            <div class="project-desc">
+                                <p>肘X線画像から外反角（Carrying angle）・屈曲角をAIで推定し、ポジショニング補正アドバイスをリアルタイム提供するシステム。</p>
+                                <ul class="feat-list">
+                                    <li><span class="feat-key">実ファントムX線使用</span>ドメインギャップ問題を根本解決</li>
+                                    <li><span class="feat-key">倫理委員会不要</span>ファントム（人体模型）のみで研究可能</li>
+                                    <li><span class="feat-key">デュアルモデル</span>YOLOv8-pose（主）+ ConvNeXt（セカンドオピニオン）</li>
+                                    <li><span class="feat-key">エッジ検証</span>Canny + HoughLinesPで骨軸を独立検出</li>
+                                </ul>
+                            </div>
+                            <div class="project-visual">
+                                <div class="metric-card">
+                                    <div class="metric-flow">
+                                        <div class="flow-step">Elbow X-ray</div>
+                                        <div class="flow-arrow">↓</div>
+                                        <div class="flow-step flow-step--accent">YOLOv8 + ConvNeXt</div>
+                                        <div class="flow-arrow">↓</div>
+                                        <div class="flow-step flow-step--result">
+                                            <div>Carrying: 12.4°</div>
+                                            <div>Flexion: 90.2°</div>
+                                        </div>
+                                    </div>
+                                    <div class="metric-badge">Dual Model Architecture</div>
                                 </div>
-                                <div class="visual-caption">Dual Model Architecture</div>
                             </div>
                         </div>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/tomosoko/ElbowVision" target="_blank" class="btn btn-secondary btn-sm">GitHub →</a>
+                        <a href="https://github.com/tomosoko/ElbowVision" target="_blank" class="project-link">View on GitHub →</a>
                     </div>
                 </div>
 
-                <!-- Previous Research -->
-                <div class="section-header" style="margin-top: 3rem;">
-                    <span class="section-subtitle">Previous Research</span>
-                    <h2 class="section-title" style="font-size:1.5rem;">Earlier Work</h2>
-                </div>
-                <div class="glass-card research-card" style="opacity: 0.8;">
-                    <div class="research-header">
-                        <span class="tag">ConvNeXt-Tiny</span>
-                        <span class="tag">Grad-CAM</span>
-                        <span class="tag">TTA</span>
-                    </div>
-                    <h3 style="font-size:1.3rem;">膝関節X線撮影における再撮影判断支援のための深層学習プログラムの開発</h3>
-                    <h4 class="research-en-title">Deep Learning Program for Retake Decision Support in Knee X-ray Imaging</h4>
-                    <div class="research-desc">
+                <!-- Earlier Work -->
+                <div class="earlier-work">
+                    <div class="earlier-label">— Earlier Research —</div>
+                    <div class="earlier-card">
+                        <div class="project-tags" style="margin-bottom:1rem;">
+                            <span class="tag">ConvNeXt-Tiny</span>
+                            <span class="tag">Grad-CAM</span>
+                            <span class="tag">TTA</span>
+                        </div>
+                        <h4 class="earlier-title">膝関節X線撮影における再撮影判断支援のための深層学習プログラムの開発</h4>
+                        <p class="earlier-en">Deep Learning Program for Retake Decision Support in Knee X-ray Imaging</p>
                         <p>ConvNeXt-Tinyを用いて膝関節側面像の角度ズレを自動推定。R² > 0.96、MAE 約1〜2°を達成。Grad-CAMにより熟練技師と同様の注視領域（大腿骨顆部）を学習していることを確認。現在のOsteoVision（YOLOv8-pose版）の前身研究。</p>
-                        <ul class="method-list" style="margin-top: 0.5rem;">
-                            <li>Model: ConvNeXt-Tiny (ImageNet-1k Pre-trained)</li>
-                            <li>Data: Phantom simulation dataset (671 images)</li>
-                            <li>R² > 0.96 / MAE: 1〜2°</li>
-                        </ul>
+                        <div class="earlier-metrics">
+                            <span>R² &gt; 0.96</span>
+                            <span>MAE: 1〜2°</span>
+                            <span>ConvNeXt-Tiny (ImageNet-1k Pre-trained)</span>
+                            <span>671 images (Phantom dataset)</span>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </section>
 
+        <!-- ── SKILLS ── -->
         <section id="skills" class="section">
             <div class="container">
-                <div class="section-header">
-                    <span class="section-subtitle">Technical Stack</span>
-                    <h2 class="section-title">Tools & Technologies</h2>
-                </div>
-                <div class="grid-3">
-                    <div class="card glass-card skill-card tech-card">
-                        <div class="card-glow"></div>
-                        <div class="icon-box">🧠</div>
-                        <h3>AI / Deep Learning</h3>
+                <div class="section-label">03 — Skills & Stack</div>
+                <div class="skills-grid">
+                    <div class="skill-group">
+                        <h3 class="skill-group-title">AI / Deep Learning</h3>
                         <ul class="skill-list">
-                            <li><strong>YOLOv8-pose</strong></li>
-                            <li><strong>ConvNeXt / Grad-CAM</strong></li>
-                            <li>PyTorch / Google Colab</li>
-                            <li>Bland-Altman Analysis</li>
+                            <li class="skill-item skill-item--strong">YOLOv8-pose</li>
+                            <li class="skill-item skill-item--strong">ConvNeXt</li>
+                            <li class="skill-item">Grad-CAM / XAI</li>
+                            <li class="skill-item">PyTorch</li>
+                            <li class="skill-item">Google Colab</li>
+                            <li class="skill-item">Bland-Altman Analysis</li>
                         </ul>
                     </div>
-                    <div class="card glass-card skill-card tech-card">
-                        <div class="card-glow"></div>
-                        <div class="icon-box">⚙️</div>
-                        <h3>Development</h3>
+                    <div class="skill-group">
+                        <h3 class="skill-group-title">Development</h3>
                         <ul class="skill-list">
-                            <li><strong>FastAPI / Next.js</strong></li>
-                            <li><strong>Docker / GitHub Actions</strong></li>
-                            <li>Python / OpenCV</li>
-                            <li>Firebase / Gemini API</li>
+                            <li class="skill-item skill-item--strong">FastAPI</li>
+                            <li class="skill-item skill-item--strong">Next.js</li>
+                            <li class="skill-item skill-item--strong">Docker</li>
+                            <li class="skill-item">GitHub Actions (CI/CD)</li>
+                            <li class="skill-item">Python / OpenCV</li>
+                            <li class="skill-item">Firebase / Gemini API</li>
                         </ul>
                     </div>
-                    <div class="card glass-card skill-card tech-card">
-                        <div class="card-glow"></div>
-                        <div class="icon-box">☢️</div>
-                        <h3>Radiology</h3>
+                    <div class="skill-group">
+                        <h3 class="skill-group-title">Radiology</h3>
                         <ul class="skill-list">
-                            <li>X-ray Positioning QA</li>
-                            <li>DRR Synthesis (CT→X-ray)</li>
-                            <li>DICOM / Phantom Study</li>
-                            <li>Radiation Protection</li>
+                            <li class="skill-item skill-item--strong">X-ray Positioning QA</li>
+                            <li class="skill-item skill-item--strong">DRR Synthesis (CT→X-ray)</li>
+                            <li class="skill-item">DICOM</li>
+                            <li class="skill-item">Phantom Study</li>
+                            <li class="skill-item">Geometric Angle Analysis</li>
+                            <li class="skill-item">Radiation Protection</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="section">
+        <!-- ── CONTACT ── -->
+        <section id="contact" class="section section--contact">
             <div class="container">
-                <div class="section-header">
-                    <span class="section-subtitle">Connect</span>
-                    <h2 class="section-title">Contact</h2>
-                </div>
-                <div class="glass-card contact-card">
-                    <p>研究・共同開発・採用に関するお問い合わせはお気軽にどうぞ。</p>
-                    <div class="contact-buttons">
-                        <a href="mailto:takagi.works.dev@gmail.com" class="btn btn-primary">Email</a>
-                        <a href="https://github.com/tomosoko" target="_blank" class="btn btn-secondary">GitHub</a>
+                <div class="section-label">04 — Contact</div>
+                <div class="contact-layout">
+                    <h2 class="contact-heading">Let's Connect</h2>
+                    <p class="contact-desc">研究・共同開発・採用に関するお問い合わせはお気軽にどうぞ。</p>
+                    <div class="contact-links">
+                        <a href="mailto:takagi.works.dev@gmail.com" class="contact-btn">
+                            <span class="contact-btn-label">Email</span>
+                            <span class="contact-btn-val">takagi.works.dev@gmail.com</span>
+                            <span class="contact-btn-arrow">→</span>
+                        </a>
+                        <a href="https://github.com/tomosoko" target="_blank" class="contact-btn">
+                            <span class="contact-btn-label">GitHub</span>
+                            <span class="contact-btn-val">github.com/tomosoko</span>
+                            <span class="contact-btn-arrow">→</span>
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
+
     </main>
 
-    <footer class="footer">
+    <footer class="site-footer">
         <div class="container">
-            <div class="footer-content">
-                <span class="copyright">&copy; 2026 Kohei Takagi. All rights reserved.</span>
-                <span class="tech-stack">Radiologic Technologist × AI Developer</span>
+            <div class="footer-inner">
+                <span>© 2026 Kohei Takagi</span>
+                <span>Radiologic Technologist × AI Developer</span>
             </div>
         </div>
     </footer>
