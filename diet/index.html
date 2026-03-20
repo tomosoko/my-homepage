@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diet Plan 2026 — Kohei</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:     #fafafa;
+      --bg2:    #f0f0f0;
+      --text:   #0a0a0a;
+      --muted:  #777;
+      --border: rgba(0,0,0,0.08);
+      --accent: #0a0a0a;
+      --green:  #16a34a;
+      --red:    #dc2626;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      padding: 0 0 4rem;
+    }
+
+    .header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250,250,250,0.95);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .header-logo {
+      font-weight: 800; font-size: 1rem; letter-spacing: -0.02em;
+      text-decoration: none; color: var(--text);
+    }
+    .header-label {
+      font-size: 0.7rem; font-weight: 500; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.1em;
+    }
+
+    .hero {
+      padding: 3rem 1.5rem 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-tag {
+      display: inline-block;
+      font-size: 0.65rem; font-weight: 600; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.15em;
+      margin-bottom: 0.75rem;
+    }
+    .hero-title {
+      font-size: clamp(2rem, 10vw, 3rem);
+      font-weight: 800; letter-spacing: -0.04em; line-height: 1.05;
+      margin-bottom: 1rem;
+    }
+    .hero-title span { color: var(--muted); }
+    .hero-meta {
+      display: flex; gap: 1.5rem; flex-wrap: wrap;
+      font-size: 0.78rem; color: var(--muted);
+    }
+    .hero-meta strong { color: var(--text); }
+
+    .section { padding: 2.5rem 1.5rem; border-bottom: 1px solid var(--border); }
+    .section-label {
+      font-size: 0.65rem; font-weight: 700; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.15em;
+      margin-bottom: 1.25rem;
+    }
+    .section-title {
+      font-size: 1.15rem; font-weight: 700; letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+    }
+
+    /* Progress Bar */
+    .progress-card {
+      background: var(--bg2);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .progress-row {
+      display: flex; justify-content: space-between;
+      font-size: 0.78rem; margin-bottom: 0.6rem;
+    }
+    .progress-row .label { color: var(--muted); }
+    .progress-track {
+      background: var(--border);
+      border-radius: 2px; height: 4px; overflow: hidden;
+      margin-bottom: 1.25rem;
+    }
+    .progress-fill {
+      height: 100%; background: var(--accent);
+      border-radius: 2px;
+      transition: width 0.5s ease;
+    }
+    .stats-row {
+      display: grid; grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem; margin-top: 0.5rem;
+    }
+    .stat { text-align: center; }
+    .stat-num {
+      font-family: 'Space Mono', monospace;
+      font-size: 1.3rem; font-weight: 700; letter-spacing: -0.02em;
+      display: block;
+    }
+    .stat-num.green { color: var(--green); }
+    .stat-num.red { color: var(--red); }
+    .stat-label { font-size: 0.65rem; color: var(--muted); }
+
+    /* Calorie Table */
+    .kcal-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0.75rem; margin-bottom: 1rem;
+    }
+    .kcal-item {
+      background: var(--bg2); border-radius: 6px; padding: 1rem;
+    }
+    .kcal-item-label { font-size: 0.65rem; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; }
+    .kcal-item-val {
+      font-family: 'Space Mono', monospace;
+      font-size: 1.4rem; font-weight: 700; letter-spacing: -0.02em;
+    }
+    .kcal-item-val.minus { color: var(--green); }
+
+    /* Meal Plan */
+    .meal-list { list-style: none; }
+    .meal-item {
+      display: grid; grid-template-columns: 3fr 1fr 1fr;
+      gap: 0.5rem; align-items: center;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.82rem;
+    }
+    .meal-item:last-child { border-bottom: none; }
+    .meal-time {
+      font-size: 0.65rem; font-weight: 700; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.1em;
+      display: block; margin-bottom: 0.15rem;
+    }
+    .meal-content { font-weight: 500; }
+    .meal-kcal, .meal-protein {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem; text-align: right; color: var(--muted);
+    }
+    .meal-item.total {
+      font-weight: 700; color: var(--text);
+    }
+    .meal-item.total .meal-kcal,
+    .meal-item.total .meal-protein { color: var(--text); }
+
+    /* Rules */
+    .rules-list { list-style: none; }
+    .rule-item {
+      display: flex; align-items: flex-start; gap: 0.75rem;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.84rem;
+    }
+    .rule-item:last-child { border-bottom: none; }
+    .rule-num {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem; font-weight: 700;
+      color: var(--muted); min-width: 1.5rem; padding-top: 0.1rem;
+    }
+
+    /* Milestones */
+    .milestones-list { list-style: none; }
+    .milestone-item {
+      display: flex; align-items: center; gap: 0.75rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.82rem;
+    }
+    .milestone-item:last-child { border-bottom: none; }
+    .milestone-week {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem; font-weight: 700;
+      color: var(--muted); min-width: 4rem;
+    }
+    .milestone-date { color: var(--muted); min-width: 6.5rem; font-size: 0.78rem; }
+    .milestone-weight {
+      font-family: 'Space Mono', monospace;
+      font-weight: 700; margin-left: auto;
+    }
+    .milestone-weight.achieved { color: var(--green); }
+    .milestone-weight.current {
+      background: var(--text); color: var(--bg);
+      padding: 0.15rem 0.5rem; border-radius: 3px;
+    }
+
+    .footer {
+      padding: 2rem 1.5rem 0;
+      font-size: 0.7rem; color: var(--muted);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <a href="/my-homepage/" class="header-logo">KT.</a>
+    <span class="header-label">Diet Plan 2026</span>
+  </header>
+
+  <div class="hero">
+    <span class="hero-tag">2026-03-20 → 2026-04-30</span>
+    <h1 class="hero-title">-7kg<br><span>in 41 days</span></h1>
+    <div class="hero-meta">
+      <div><span class="label">START </span><strong>65.0 kg</strong></div>
+      <div><span class="label">GOAL </span><strong>58.0 kg</strong></div>
+      <div><span class="label">HEIGHT </span><strong>164 cm</strong></div>
+    </div>
+  </div>
+
+  <!-- Progress -->
+  <div class="section">
+    <div class="section-label">Progress</div>
+
+    <div class="progress-card">
+      <div class="progress-row">
+        <span class="label">開始 65.0 kg</span>
+        <span><strong id="current-weight">—</strong> kg（最新）</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+      </div>
+      <div class="stats-row">
+        <div class="stat">
+          <span class="stat-num" id="lost-kg">—</span>
+          <span class="stat-label">減量 kg</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" id="remain-kg">7.0</span>
+          <span class="stat-label">残り kg</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" id="elapsed-days">—</span>
+          <span class="stat-label">経過日数</span>
+        </div>
+      </div>
+    </div>
+
+    <p style="font-size:0.72rem; color:var(--muted); text-align:center;">
+      体重はEufy体重計 → Apple Health → 自動連携
+    </p>
+  </div>
+
+  <!-- Calorie Budget -->
+  <div class="section">
+    <div class="section-label">Calorie Budget</div>
+    <div class="kcal-grid">
+      <div class="kcal-item">
+        <div class="kcal-item-label">TDEE</div>
+        <div class="kcal-item-val">2,700<span style="font-size:0.7rem;font-weight:400"> kcal</span></div>
+      </div>
+      <div class="kcal-item">
+        <div class="kcal-item-label">Target Intake</div>
+        <div class="kcal-item-val">1,150<span style="font-size:0.7rem;font-weight:400"> kcal</span></div>
+      </div>
+      <div class="kcal-item">
+        <div class="kcal-item-label">Daily Deficit</div>
+        <div class="kcal-item-val minus">-1,550<span style="font-size:0.7rem;font-weight:400"> kcal</span></div>
+      </div>
+      <div class="kcal-item">
+        <div class="kcal-item-label">Loss / week</div>
+        <div class="kcal-item-val">~1.4<span style="font-size:0.7rem;font-weight:400"> kg</span></div>
+      </div>
+    </div>
+    <p style="font-size:0.72rem; color:var(--muted);">
+      毎日3kmランニング＋筋トレ30分を加味したTDEE（約2,700 kcal）。筋肉量維持のためタンパク質は体重×2g/日を確保。
+    </p>
+  </div>
+
+  <!-- Meal Plan -->
+  <div class="section">
+    <div class="section-label">Daily Meal Plan</div>
+    <div style="display:flex; justify-content:flex-end; gap:1rem; font-size:0.65rem; color:var(--muted); margin-bottom:0.5rem; font-weight:600; text-transform:uppercase; letter-spacing:0.1em;">
+      <span style="min-width:3rem; text-align:right;">kcal</span>
+      <span style="min-width:3rem; text-align:right;">Protein</span>
+    </div>
+    <ul class="meal-list">
+      <li class="meal-item">
+        <div>
+          <span class="meal-time">Morning</span>
+          <span class="meal-content">卵2個 + 納豆1パック + プロテイン1杯</span>
+        </div>
+        <span class="meal-kcal">400</span>
+        <span class="meal-protein">45g</span>
+      </li>
+      <li class="meal-item">
+        <div>
+          <span class="meal-time">Lunch</span>
+          <span class="meal-content">サラダチキン1個 + 卵2個</span>
+        </div>
+        <span class="meal-kcal">300</span>
+        <span class="meal-protein">41g</span>
+      </li>
+      <li class="meal-item">
+        <div>
+          <span class="meal-time">Dinner</span>
+          <span class="meal-content">サラダチキン1個 + 納豆1パック + 卵1個</span>
+        </div>
+        <span class="meal-kcal">310</span>
+        <span class="meal-protein">42g</span>
+      </li>
+      <li class="meal-item">
+        <div>
+          <span class="meal-time">Post-Workout</span>
+          <span class="meal-content">プロテイン1杯（運動直後30分以内）</span>
+        </div>
+        <span class="meal-kcal">120</span>
+        <span class="meal-protein">22g</span>
+      </li>
+      <li class="meal-item total">
+        <div>
+          <span class="meal-time" style="color:var(--text)">Total</span>
+          <span class="meal-content">ビタミン剤（毎朝食後・微量栄養素補完）</span>
+        </div>
+        <span class="meal-kcal">1,130</span>
+        <span class="meal-protein">150g</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Rules -->
+  <div class="section">
+    <div class="section-label">Rules</div>
+    <ul class="rules-list">
+      <li class="rule-item">
+        <span class="rule-num">01</span>
+        <span>毎日3kmランニング（消費約200kcal）</span>
+      </li>
+      <li class="rule-item">
+        <span class="rule-num">02</span>
+        <span>毎日筋トレ30分（消費約180kcal・筋肉量維持）</span>
+      </li>
+      <li class="rule-item">
+        <span class="rule-num">03</span>
+        <span>水を1日2L以上飲む</span>
+      </li>
+      <li class="rule-item">
+        <span class="rule-num">04</span>
+        <span>夜21時以降は食べない</span>
+      </li>
+      <li class="rule-item">
+        <span class="rule-num">05</span>
+        <span>プロテインは運動直後30分以内に摂取する</span>
+      </li>
+      <li class="rule-item">
+        <span class="rule-num">06</span>
+        <span>ビタミン剤は毎朝食後に必ず飲む（微量栄養素補完のため必須）</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Milestones -->
+  <div class="section">
+    <div class="section-label">Weekly Milestones</div>
+    <ul class="milestones-list">
+      <li class="milestone-item">
+        <span class="milestone-week">Week 1</span>
+        <span class="milestone-date">3/20 〜 3/26</span>
+        <span class="milestone-weight current" id="w1">63.5 kg</span>
+      </li>
+      <li class="milestone-item">
+        <span class="milestone-week">Week 2</span>
+        <span class="milestone-date">3/27 〜 4/2</span>
+        <span class="milestone-weight" id="w2">62.0 kg</span>
+      </li>
+      <li class="milestone-item">
+        <span class="milestone-week">Week 3</span>
+        <span class="milestone-date">4/3 〜 4/9</span>
+        <span class="milestone-weight" id="w3">60.5 kg</span>
+      </li>
+      <li class="milestone-item">
+        <span class="milestone-week">Week 4</span>
+        <span class="milestone-date">4/10 〜 4/16</span>
+        <span class="milestone-weight" id="w4">59.0 kg</span>
+      </li>
+      <li class="milestone-item">
+        <span class="milestone-week">Week 5</span>
+        <span class="milestone-date">4/17 〜 4/23</span>
+        <span class="milestone-weight" id="w5">58.5 kg</span>
+      </li>
+      <li class="milestone-item">
+        <span class="milestone-week">Week 6</span>
+        <span class="milestone-date">4/24 〜 4/30</span>
+        <span class="milestone-weight" id="w6">58.0 kg</span>
+      </li>
+    </ul>
+  </div>
+
+  <footer class="footer">
+    <p>Kohei Takagi — Diet Battle 2026</p>
+    <p style="margin-top:0.25rem;">FMC Diet Contest 終了: 2026-04-30</p>
+  </footer>
+
+  <script>
+    // Firestore REST API (no auth, open rules until 2030)
+    const PROJECT_ID = 'fmc-diet';
+    const PARTICIPANT_NAME = '\u{1F332}'; // 🌲
+
+    const START_WEIGHT = 65.0;
+    const GOAL_WEIGHT = 58.0;
+    const START_DATE = new Date('2026-03-20');
+
+    async function loadProgress() {
+      try {
+        const url = `https://firestore.googleapis.com/v1/projects/${PROJECT_ID}/databases/(default)/documents/participants`;
+        const res = await fetch(url);
+        const data = await res.json();
+        if (!data.documents) return;
+
+        const participant = data.documents.find(doc => {
+          const nameField = doc.fields?.name?.stringValue;
+          return nameField === PARTICIPANT_NAME;
+        });
+        if (!participant) return;
+
+        const historyValues = participant.fields?.history?.arrayValue?.values || [];
+        if (historyValues.length === 0) return;
+
+        // Parse history
+        const history = historyValues.map(v => ({
+          date: v.mapValue.fields.date.stringValue,
+          weight: parseFloat(v.mapValue.fields.weight.doubleValue ?? v.mapValue.fields.weight.stringValue ?? v.mapValue.fields.weight.integerValue)
+        })).sort((a, b) => a.date.localeCompare(b.date));
+
+        const latest = history[history.length - 1];
+        const currentWeight = latest.weight;
+        const lost = START_WEIGHT - currentWeight;
+        const remain = currentWeight - GOAL_WEIGHT;
+        const progress = Math.min(100, (lost / (START_WEIGHT - GOAL_WEIGHT)) * 100);
+
+        const today = new Date();
+        const elapsed = Math.floor((today - START_DATE) / (1000 * 60 * 60 * 24));
+
+        // Update DOM
+        document.getElementById('current-weight').textContent = currentWeight.toFixed(1);
+        document.getElementById('progress-fill').style.width = progress + '%';
+
+        const lostEl = document.getElementById('lost-kg');
+        lostEl.textContent = (lost >= 0 ? '-' : '+') + Math.abs(lost).toFixed(1);
+        lostEl.className = 'stat-num ' + (lost >= 0 ? 'green' : 'red');
+
+        const remainEl = document.getElementById('remain-kg');
+        remainEl.textContent = remain.toFixed(1);
+        remainEl.className = 'stat-num ' + (remain <= 0 ? 'green' : '');
+
+        document.getElementById('elapsed-days').textContent = elapsed;
+
+        // Update milestones
+        const milestones = [
+          { id: 'w1', target: 63.5, end: '2026-03-26' },
+          { id: 'w2', target: 62.0, end: '2026-04-02' },
+          { id: 'w3', target: 60.5, end: '2026-04-09' },
+          { id: 'w4', target: 59.0, end: '2026-04-16' },
+          { id: 'w5', target: 58.5, end: '2026-04-23' },
+          { id: 'w6', target: 58.0, end: '2026-04-30' },
+        ];
+
+        const todayStr = today.toISOString().split('T')[0];
+        milestones.forEach(m => {
+          const el = document.getElementById(m.id);
+          el.className = 'milestone-weight';
+          if (m.end < todayStr) {
+            // Past week: check if achieved
+            const weekEnd = history.filter(h => h.date <= m.end);
+            if (weekEnd.length > 0) {
+              const minWeight = Math.min(...weekEnd.map(h => h.weight));
+              if (minWeight <= m.target) el.className += ' achieved';
+            }
+          } else if (todayStr <= m.end && todayStr >= m.end.replace(/\d{2}$/, d => String(parseInt(d) - 6).padStart(2,'0'))) {
+            el.className += ' current';
+          }
+        });
+
+      } catch (e) {
+        console.error('Failed to load progress:', e);
+      }
+    }
+
+    loadProgress();
+  </script>
+
+</body>
+</html>

@@ -3,7 +3,7 @@
 高木滉平の個人ポートフォリオサイト。放射線技師＆AI研究者として対外アピール用。
 GitHub Pages で公開中: https://tomosoko.github.io/my-homepage/
 
-技術構成: HTML / CSS / JS（ビルドなし）
+技術構成: HTML / CSS / TypeScript + Vite（GitHub Actions でビルド＆デプロイ）
 
 ---
 
@@ -13,7 +13,11 @@ GitHub Pages で公開中: https://tomosoko.github.io/my-homepage/
 |---|---|
 | `index.html` | メインHTML（全セクション） |
 | `style.css` | スタイル |
-| `script.js` | インタラクション・アニメーション |
+| `src/main.ts` | インタラクション・アニメーション（TypeScript） |
+| `script.js.bak` | 旧JS（バックアップ） |
+| `vite.config.ts` | Vite設定（base: /my-homepage/） |
+| `tsconfig.json` | TypeScript設定 |
+| `.github/workflows/deploy.yml` | GitHub Actions デプロイワークフロー |
 
 ## セクション構成
 
@@ -23,12 +27,22 @@ GitHub Pages で公開中: https://tomosoko.github.io/my-homepage/
 - Skills（技術スタック）
 - Contact
 
+## 開発
+
+```bash
+npm run dev      # ローカル開発サーバー
+npm run build    # 本番ビルド（dist/に出力）
+npm run preview  # ビルド結果のプレビュー
+```
+
 ## デプロイ
 
 ```bash
 git add . && git commit -m "update" && git push
-# GitHub Pagesが自動で反映される
+# GitHub Actions が自動でビルド＆GitHub Pagesにデプロイ
 ```
+
+GitHub リポジトリの Settings > Pages で Source を「GitHub Actions」に変更すること。
 
 ## 注意
 
