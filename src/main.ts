@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initCanvas()
   initMobileMenu()
   initScrollAnimations()
-  initSimulator()
 })
 
 /* Canvas Animation: Network Nodes */
@@ -188,96 +187,5 @@ function initScrollAnimations(): void {
   targets.forEach(el => {
     el.classList.add('will-animate')
     observer.observe(el)
-  })
-}
-
-/* AI Simulator Logic */
-type LogType = 'success' | 'warn' | ''
-
-function initSimulator(): void {
-  const btnExtract = document.getElementById('btn-extract') as HTMLButtonElement | null
-  const btnVerify = document.getElementById('btn-verify') as HTMLButtonElement | null
-  const btnReset = document.getElementById('btn-reset') as HTMLButtonElement | null
-
-  const simViewport = document.querySelector('.sim-viewport')
-  const points = document.querySelectorAll('.point')
-  const bbox = document.getElementById('sim-bbox')
-  const consoleOut = document.getElementById('sim-console-out')
-
-  const step1 = document.getElementById('step-1')
-  const step2 = document.getElementById('step-2')
-  const step3 = document.getElementById('step-3')
-
-  if (!btnExtract || !btnVerify || !btnReset || !simViewport || !consoleOut) return
-
-  function log(msg: string, type: LogType = ''): void {
-    const time = new Date().toISOString().split('T')[1].substring(0, 8)
-    const spanClass =
-      type === 'success' ? 'log-success' : type === 'warn' ? 'log-warn' : ''
-    const line = `<div style="margin-bottom:4px;"><span class="log-time">[${time}]</span> <span class="${spanClass}">${msg}</span></div>`
-    consoleOut!.innerHTML += line
-    consoleOut!.scrollTop = consoleOut!.scrollHeight
-  }
-
-  btnExtract.addEventListener('click', () => {
-    btnExtract!.disabled = true
-    simViewport!.classList.add('scanning')
-
-    step1?.classList.remove('active')
-    step1?.classList.add('done')
-    step2?.classList.add('active')
-
-    log('> Starting Feature Extraction...')
-    log('Loading ConvNeXt-Tiny weights...')
-
-    setTimeout(() => log('Model loaded. Running forward pass...', 'warn'), 800)
-
-    setTimeout(() => {
-      simViewport!.classList.remove('scanning')
-      points.forEach(p => p.classList.add('active'))
-      log('Features successfully extracted.', 'success')
-      log('Landmarks: Femur Condyle, Tibial Plateau, Patella detected.')
-
-      btnVerify!.disabled = false
-    }, 2500)
-  })
-
-  btnVerify.addEventListener('click', () => {
-    btnVerify!.disabled = true
-
-    step2?.classList.remove('active')
-    step2?.classList.add('done')
-    step3?.classList.add('active')
-
-    log('> Verifying AI coordinates against ground truth...')
-    log('Calculating Dice Score & MAE... Please wait.')
-
-    setTimeout(() => {
-      bbox?.classList.add('active')
-      log('Verification Complete.', 'success')
-      log('Dice: 0.94, MAE: 1.2°', 'success')
-      log('Target data is ready for training export.', 'success')
-
-      step3?.classList.remove('active')
-      step3?.classList.add('done')
-
-      btnReset!.disabled = false
-    }, 1500)
-  })
-
-  btnReset.addEventListener('click', () => {
-    btnReset!.disabled = true
-    btnExtract!.disabled = false
-    btnVerify!.disabled = true
-
-    points.forEach(p => p.classList.remove('active'))
-    bbox?.classList.remove('active')
-
-    step1?.classList.add('active')
-    step1?.classList.remove('done')
-    step2?.classList.remove('active', 'done')
-    step3?.classList.remove('active', 'done')
-
-    consoleOut!.innerHTML = `<div><span class="log-time">[System]</span> > System initialized. Ready for image analysis...</div>`
   })
 }
