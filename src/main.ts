@@ -140,6 +140,7 @@ function initMobileMenu(): void {
     <nav class="mobile-nav">
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
+      <a href="#presentations">Presentations</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
       <a href="https://github.com/tomosoko" target="_blank">GitHub</a>
