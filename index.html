@@ -107,8 +107,8 @@
                                 <div class="stat-lbl">Patient Data<br>Required</div>
                             </div>
                             <div class="stat">
-                                <div class="stat-num">2+</div>
-                                <div class="stat-lbl">Active AI<br>Projects</div>
+                                <div class="stat-num">3+</div>
+                                <div class="stat-lbl">Active<br>Projects</div>
                             </div>
                             <div class="stat">
                                 <div class="stat-num">RT</div>
@@ -150,6 +150,8 @@
                                 <ul class="feat-list">
                                     <li><span class="feat-key">合成DRR自動生成</span>OsteoSynthで720枚の訓練データを生成（患者データ不要）</li>
                                     <li><span class="feat-key">精度</span>mAP50 = 99.8%（633枚で訓練）</li>
+                                    <li><span class="feat-key">MPS推論</span>Apple Silicon最適化 — 13.7ms / 73.2FPS リアルタイム推論</li>
+                                    <li><span class="feat-key">統計検証</span>Bland-Altman分析による系統誤差・一致限界の定量評価フレームワーク</li>
                                     <li><span class="feat-key">XAI</span>Grad-CAMによる注視領域可視化</li>
                                     <li><span class="feat-key">CI/CD</span>GitHub Actions + Docker</li>
                                 </ul>
@@ -166,7 +168,7 @@
                                             <div>Rotation: 2.1°</div>
                                         </div>
                                     </div>
-                                    <div class="metric-badge">mAP50 <strong>99.8%</strong></div>
+                                    <div class="metric-badge">mAP50 <strong>99.8%</strong> | MPS <strong>73.2 FPS</strong></div>
                                 </div>
                             </div>
                         </div>
@@ -196,8 +198,8 @@
                             <div class="project-desc">
                                 <p>肘X線画像から外反角（Carrying angle）・屈曲角をAIで推定し、ポジショニング補正アドバイスをリアルタイム提供するシステム。</p>
                                 <ul class="feat-list">
-                                    <li><span class="feat-key">実ファントムX線使用</span>ドメインギャップ問題を根本解決</li>
-                                    <li><span class="feat-key">倫理委員会不要</span>ファントム（人体模型）のみで研究可能</li>
+                                    <li><span class="feat-key">DRR自動生成</span>CT→DRR合成パイプラインで訓練データを自動生成（患者データ不要）</li>
+                                    <li><span class="feat-key">6キーポイント検出</span>肘関節の解剖学的ランドマーク6点をYOLOv8-poseで検出</li>
                                     <li><span class="feat-key">デュアルモデル</span>YOLOv8-pose（主）+ ConvNeXt（セカンドオピニオン）</li>
                                     <li><span class="feat-key">エッジ検証</span>Canny + HoughLinesPで骨軸を独立検出</li>
                                 </ul>
@@ -219,6 +221,50 @@
                             </div>
                         </div>
                         <a href="https://github.com/tomosoko/ElbowVision" target="_blank" class="project-link">View on GitHub →</a>
+                    </div>
+                </div>
+
+                <!-- kabu-sim -->
+                <div class="project-item">
+                    <div class="project-meta">
+                        <span class="project-num">03</span>
+                        <div class="project-tags">
+                            <span class="tag">Streamlit</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Cloudflare Tunnel</span>
+                            <span class="tag tag-live">Public</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">kabu-sim</h3>
+                        <p class="project-subtitle">株式投資シミュレーター — Stock Investment Simulator & Analytics Platform</p>
+                        <div class="project-grid">
+                            <div class="project-desc">
+                                <p>Streamlitベースの大規模株式投資シミュレーション・分析プラットフォーム。Cloudflare Tunnelで安全に外部公開。</p>
+                                <ul class="feat-list">
+                                    <li><span class="feat-key">大規模コードベース</span>73,000行以上のPythonコード</li>
+                                    <li><span class="feat-key">テスト</span>2,054テストケースで品質担保</li>
+                                    <li><span class="feat-key">UI</span>65ページの充実したStreamlit UI</li>
+                                    <li><span class="feat-key">公開基盤</span>Cloudflare Tunnelによるセキュアな外部公開</li>
+                                </ul>
+                            </div>
+                            <div class="project-visual">
+                                <div class="metric-card">
+                                    <div class="metric-flow">
+                                        <div class="flow-step">Market Data</div>
+                                        <div class="flow-arrow">↓</div>
+                                        <div class="flow-step flow-step--accent">Streamlit App</div>
+                                        <div class="flow-arrow">↓</div>
+                                        <div class="flow-step flow-step--result">
+                                            <div>65 Pages UI</div>
+                                            <div>2,054 Tests</div>
+                                        </div>
+                                    </div>
+                                    <div class="metric-badge"><strong>73,000+</strong> Lines of Code</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://github.com/tomosoko/kabu-sim" target="_blank" class="project-link">View on GitHub →</a>
                     </div>
                 </div>
 
@@ -297,6 +343,7 @@
                             <li class="skill-item skill-item--strong">Docker</li>
                             <li class="skill-item">GitHub Actions (CI/CD)</li>
                             <li class="skill-item">Python / OpenCV</li>
+                            <li class="skill-item">Streamlit</li>
                             <li class="skill-item">Firebase / Gemini API</li>
                         </ul>
                     </div>
