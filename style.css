@@ -267,8 +267,8 @@ body {
     border: 1px solid var(--border2); color: var(--muted);
     border-radius: 2px; letter-spacing: 0.04em; white-space: nowrap;
 }
-.tag-live { border-color: rgba(255,255,255,0.55); color: #ddd; }
-.tag-wip { border-color: rgba(255,255,255,0.2); color: #888; font-style: italic; }
+.tag-live { border-color: #16a34a; color: #16a34a; }
+.tag-wip { border-color: #d97706; color: #d97706; font-style: italic; }
 
 .project-title {
     font-family: var(--font-h); font-size: 3.2rem; font-weight: 800;
