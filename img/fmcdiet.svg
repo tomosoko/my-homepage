@@ -1,0 +1,98 @@
+<svg viewBox="0 0 640 340" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="340" fill="#080808" rx="4"/>
+
+  <!-- Grid lines -->
+  <line x1="60" y1="30" x2="60" y2="255" stroke="#1a1a1a" stroke-width="1"/>
+  <line x1="60" y1="255" x2="610" y2="255" stroke="#1a1a1a" stroke-width="1"/>
+  <line x1="60" y1="75" x2="610" y2="75" stroke="#111" stroke-width="1"/>
+  <line x1="60" y1="120" x2="610" y2="120" stroke="#111" stroke-width="1"/>
+  <line x1="60" y1="165" x2="610" y2="165" stroke="#111" stroke-width="1"/>
+  <line x1="60" y1="210" x2="610" y2="210" stroke="#111" stroke-width="1"/>
+
+  <!-- Y-axis labels (kg) -->
+  <text x="50" y="79" fill="#333" font-size="9" font-family="monospace" text-anchor="end">82</text>
+  <text x="50" y="124" fill="#333" font-size="9" font-family="monospace" text-anchor="end">79</text>
+  <text x="50" y="169" fill="#333" font-size="9" font-family="monospace" text-anchor="end">76</text>
+  <text x="50" y="214" fill="#333" font-size="9" font-family="monospace" text-anchor="end">73</text>
+  <text x="50" y="259" fill="#333" font-size="9" font-family="monospace" text-anchor="end">70</text>
+
+  <!-- X-axis labels (weeks) -->
+  <text x="85" y="270" fill="#333" font-size="9" font-family="monospace" text-anchor="middle">W1</text>
+  <text x="175" y="270" fill="#333" font-size="9" font-family="monospace" text-anchor="middle">W3</text>
+  <text x="265" y="270" fill="#333" font-size="9" font-family="monospace" text-anchor="middle">W5</text>
+  <text x="355" y="270" fill="#333" font-size="9" font-family="monospace" text-anchor="middle">W7</text>
+  <text x="445" y="270" fill="#333" font-size="9" font-family="monospace" text-anchor="middle">W9</text>
+
+  <!-- Target weight zone (shaded) -->
+  <rect x="60" y="210" width="550" height="45" fill="#00ff88" opacity="0.04"/>
+  <text x="614" y="238" fill="#00ff88" font-size="8" font-family="monospace" opacity="0.5" text-anchor="end">TARGET</text>
+
+  <!-- Actual weight line (blue) -->
+  <polyline points="85,182 130,176 175,168 220,162 265,155 310,149 355,143 400,138 445,132 490,128" fill="none" stroke="#66aaff" stroke-width="2.5" opacity="0.95"/>
+
+  <!-- Data points -->
+  <circle cx="85" cy="182" r="4" fill="#66aaff" opacity="0.95"/>
+  <circle cx="130" cy="176" r="4" fill="#66aaff" opacity="0.95"/>
+  <circle cx="175" cy="168" r="4" fill="#66aaff" opacity="0.95"/>
+  <circle cx="220" cy="162" r="4" fill="#66aaff" opacity="0.95"/>
+  <circle cx="265" cy="155" r="4" fill="#66aaff" opacity="0.95"/>
+  <circle cx="310" cy="149" r="4" fill="#66aaff" opacity="0.95"/>
+  <circle cx="355" cy="143" r="4" fill="#66aaff" opacity="0.95"/>
+  <circle cx="400" cy="138" r="4" fill="#66aaff" opacity="0.95"/>
+  <circle cx="445" cy="132" r="4" fill="#66aaff" opacity="0.95"/>
+  <circle cx="490" cy="128" r="5" fill="#66aaff" opacity="1"/>
+  <circle cx="490" cy="128" r="10" fill="none" stroke="#66aaff" stroke-width="1" opacity="0.3"/>
+
+  <!-- Theil-Sen prediction line (dashed orange) -->
+  <polyline points="85,184 175,170 265,156 355,143 445,130 535,118 610,108" fill="none" stroke="#ffaa44" stroke-width="1.5" opacity="0.7" stroke-dasharray="6,4"/>
+
+  <!-- Competitor lines (faded) -->
+  <polyline points="85,160 175,162 265,158 355,154 445,150 490,147" fill="none" stroke="#888" stroke-width="1" opacity="0.35" stroke-dasharray="3,4"/>
+  <polyline points="85,200 175,196 265,190 355,186 445,180 490,176" fill="none" stroke="#888" stroke-width="1" opacity="0.35" stroke-dasharray="3,4"/>
+
+  <!-- Current weight callout -->
+  <line x1="490" y1="128" x2="510" y2="110" stroke="#66aaff" stroke-width="1" opacity="0.6"/>
+  <rect x="510" y="98" width="88" height="20" rx="2" fill="#66aaff" opacity="0.12"/>
+  <text x="518" y="112" fill="#66aaff" font-size="11" font-family="monospace" font-weight="bold">74.2 kg</text>
+  <text x="518" y="123" fill="#66aaff" font-size="8" font-family="monospace" opacity="0.7">-3.2% ▼</text>
+
+  <!-- Leaderboard panel -->
+  <rect x="510" y="138" width="120" height="95" rx="3" fill="#0e0e0e" stroke="#1e1e1e" stroke-width="1"/>
+  <text x="520" y="154" fill="#444" font-size="8" font-family="monospace" letter-spacing="1">LEADERBOARD</text>
+  <line x1="510" y1="158" x2="630" y2="158" stroke="#1a1a1a" stroke-width="1"/>
+  <!-- Rank 1 -->
+  <text x="520" y="173" fill="#ffcc00" font-size="9" font-family="monospace" font-weight="bold">#1</text>
+  <text x="540" y="173" fill="#f0f0f0" font-size="9" font-family="monospace">Kohei</text>
+  <text x="595" y="173" fill="#00ff88" font-size="9" font-family="monospace">-3.2%</text>
+  <!-- Rank 2 -->
+  <text x="520" y="191" fill="#888" font-size="9" font-family="monospace">#2</text>
+  <text x="540" y="191" fill="#666" font-size="9" font-family="monospace">Tanaka</text>
+  <text x="595" y="191" fill="#66aaff" font-size="9" font-family="monospace">-2.1%</text>
+  <!-- Rank 3 -->
+  <text x="520" y="209" fill="#888" font-size="9" font-family="monospace">#3</text>
+  <text x="540" y="209" fill="#666" font-size="9" font-family="monospace">Suzuki</text>
+  <text x="595" y="209" fill="#66aaff" font-size="9" font-family="monospace">-1.8%</text>
+  <!-- Rank 4 -->
+  <text x="520" y="227" fill="#555" font-size="9" font-family="monospace">#4</text>
+  <text x="540" y="227" fill="#444" font-size="9" font-family="monospace">Sato</text>
+  <text x="595" y="227" fill="#555" font-size="9" font-family="monospace">-0.9%</text>
+
+  <!-- Gemini AI badge -->
+  <rect x="510" y="240" width="120" height="20" rx="2" fill="#1a1008" stroke="#2a1a08" stroke-width="1"/>
+  <text x="518" y="254" fill="#ffaa44" font-size="9" font-family="monospace">✦ Gemini AI Coach</text>
+
+  <!-- Corner labels -->
+  <text x="14" y="22" fill="#444" font-size="9" font-family="monospace" letter-spacing="1">FMC DIET — AI WEIGHT TRACKER × PWA</text>
+
+  <!-- Legend -->
+  <line x1="14" y1="320" x2="32" y2="320" stroke="#66aaff" stroke-width="2.5"/>
+  <text x="36" y="324" fill="#555" font-size="9" font-family="monospace">Actual weight</text>
+  <line x1="148" y1="320" x2="166" y2="320" stroke="#ffaa44" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="170" y="324" fill="#555" font-size="9" font-family="monospace">Theil-Sen prediction</text>
+  <line x1="320" y1="320" x2="338" y2="320" stroke="#888" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="342" y="324" fill="#555" font-size="9" font-family="monospace">Competitors</text>
+
+  <!-- Firebase badge -->
+  <rect x="490" y="312" width="138" height="20" rx="2" fill="none" stroke="#222" stroke-width="1"/>
+  <text x="500" y="326" fill="#555" font-size="9" font-family="monospace">Firebase × Gemini × PWA</text>
+</svg>
