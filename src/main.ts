@@ -165,6 +165,9 @@ function initMobileMenu(): void {
   overlay.addEventListener('click', (e: Event) => {
     if (e.target === overlay) closeMenu()
   })
+  document.addEventListener('keydown', (e: KeyboardEvent) => {
+    if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeMenu()
+  })
   overlay.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', closeMenu)
   })
@@ -183,7 +186,7 @@ function initScrollAnimations(): void {
   )
 
   const targets = document.querySelectorAll(
-    '.project-item, .about-layout, .skills-grid, .earlier-card, .contact-layout'
+    '.project-item, .about-layout, .skills-grid, .earlier-card, .contact-layout, .pres-item'
   )
   targets.forEach(el => {
     el.classList.add('will-animate')
