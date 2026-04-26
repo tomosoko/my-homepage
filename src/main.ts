@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCanvas()
   initMobileMenu()
   initScrollAnimations()
+  initScrollSpy()
 })
 
 /* Canvas Animation: Network Nodes */
@@ -192,4 +193,40 @@ function initScrollAnimations(): void {
     el.classList.add('will-animate')
     observer.observe(el)
   })
+}
+
+function initScrollSpy(): void {
+  const sectionIds = ['about', 'projects', 'presentations', 'skills', 'contact']
+  const navLinks = document.querySelectorAll<HTMLAnchorElement>('.nav-links a[href^="#"]')
+
+  const sections = sectionIds
+    .map(id => document.getElementById(id))
+    .filter((el): el is HTMLElement => el !== null)
+
+  function setActive(id: string): void {
+    navLinks.forEach(a => {
+      const href = a.getAttribute('href')
+      if (href === `#${id}`) {
+        a.classList.add('active')
+      } else {
+        a.classList.remove('active')
+      }
+    })
+  }
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setActive(entry.target.id)
+        }
+      })
+    },
+    {
+      rootMargin: '-40% 0px -55% 0px',
+      threshold: 0,
+    }
+  )
+
+  sections.forEach(section => observer.observe(section))
 }
