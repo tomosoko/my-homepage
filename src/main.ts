@@ -136,6 +136,10 @@ function initMobileMenu(): void {
   // Create overlay
   const overlay = document.createElement('div')
   overlay.className = 'mobile-overlay'
+  overlay.id = 'mobile-overlay'
+  overlay.setAttribute('role', 'dialog')
+  overlay.setAttribute('aria-modal', 'true')
+  overlay.setAttribute('aria-label', 'Navigation menu')
   overlay.innerHTML = `
     <button class="mobile-overlay-close" aria-label="Close menu">✕</button>
     <nav class="mobile-nav">
@@ -155,10 +159,14 @@ function initMobileMenu(): void {
   function openMenu(): void {
     overlay.classList.add('is-open')
     document.body.style.overflow = 'hidden'
+    ;(mobileBtn as HTMLButtonElement).setAttribute('aria-expanded', 'true')
+    closeBtn?.focus()
   }
   function closeMenu(): void {
     overlay.classList.remove('is-open')
     document.body.style.overflow = ''
+    ;(mobileBtn as HTMLButtonElement).setAttribute('aria-expanded', 'false')
+    ;(mobileBtn as HTMLButtonElement).focus()
   }
 
   mobileBtn.addEventListener('click', openMenu)
