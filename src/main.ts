@@ -92,6 +92,8 @@ function initCanvas(): void {
   }
 
   // Animation Loop
+  let animationId: number | null = null
+
   function animate(): void {
     ctx!.clearRect(0, 0, width, height)
 
@@ -101,8 +103,35 @@ function initCanvas(): void {
     })
 
     connectParticles()
-    requestAnimationFrame(animate)
+    animationId = requestAnimationFrame(animate)
   }
+
+  function startAnimation(): void {
+    if (animationId === null) animationId = requestAnimationFrame(animate)
+  }
+
+  function stopAnimation(): void {
+    if (animationId !== null) {
+      cancelAnimationFrame(animationId)
+      animationId = null
+    }
+  }
+
+  // Pause when hero scrolls out of view to save CPU/battery
+  const visibilityObserver = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          startAnimation()
+        } else {
+          stopAnimation()
+          ctx!.clearRect(0, 0, width, height)
+        }
+      })
+    },
+    { threshold: 0 }
+  )
+  visibilityObserver.observe(canvas)
 
   function connectParticles(): void {
     for (let a = 0; a < particles.length; a++) {
@@ -124,7 +153,7 @@ function initCanvas(): void {
     }
   }
 
-  animate()
+  // Animation starts via IntersectionObserver when canvas enters viewport
 }
 
 /* UI Interactions */
