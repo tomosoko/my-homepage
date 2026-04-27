@@ -5,10 +5,15 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollSpy()
 })
 
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
 /* Canvas Animation: Network Nodes */
 function initCanvas(): void {
   const canvas = document.getElementById('bg-canvas') as HTMLCanvasElement | null
   if (!canvas) return
+
+  // Skip canvas animation entirely when user prefers reduced motion
+  if (prefersReducedMotion) return
 
   const ctx = canvas.getContext('2d')
   if (!ctx) return
@@ -212,6 +217,16 @@ function initMobileMenu(): void {
 }
 
 function initScrollAnimations(): void {
+  const targets = document.querySelectorAll<Element>(
+    '.project-item, .about-layout, .skills-grid, .earlier-card, .contact-layout, .pres-item'
+  )
+
+  // Skip animation setup when user prefers reduced motion — show all elements immediately
+  if (prefersReducedMotion) {
+    targets.forEach(el => el.classList.add('visible'))
+    return
+  }
+
   const observer = new IntersectionObserver(
     entries => {
       entries.forEach(entry => {
@@ -223,9 +238,6 @@ function initScrollAnimations(): void {
     { threshold: 0.05 }
   )
 
-  const targets = document.querySelectorAll(
-    '.project-item, .about-layout, .skills-grid, .earlier-card, .contact-layout, .pres-item'
-  )
   targets.forEach(el => {
     el.classList.add('will-animate')
     observer.observe(el)

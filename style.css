@@ -606,3 +606,29 @@ body {
         background: rgba(6,182,212,0.1);
     }
 }
+
+/* ─────────────────────────────────────────────
+   REDUCED MOTION — respect OS accessibility setting
+───────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+    /* Disable scroll-in animations: show elements immediately */
+    .will-animate {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    /* Disable hero scroll-line animation */
+    .scroll-line {
+        animation: none;
+    }
+
+    /* Disable all transitions except focus indicators */
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
