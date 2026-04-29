@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu()
   initScrollAnimations()
   initScrollSpy()
+  initBackToTop()
 })
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -278,4 +279,23 @@ function initScrollSpy(): void {
   )
 
   sections.forEach(section => observer.observe(section))
+}
+
+function initBackToTop(): void {
+  const btn = document.getElementById('back-to-top') as HTMLButtonElement | null
+  if (!btn) return
+
+  const SHOW_THRESHOLD = 300
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > SHOW_THRESHOLD) {
+      btn.classList.add('is-visible')
+    } else {
+      btn.classList.remove('is-visible')
+    }
+  }, { passive: true })
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'instant' : 'smooth' })
+  })
 }
