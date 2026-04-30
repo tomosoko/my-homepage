@@ -1,0 +1,16 @@
+{
+  "name": "Kohei Takagi — Radiologic Technologist & AI Developer",
+  "short_name": "Kohei Takagi",
+  "description": "診療放射線技師×AIエンジニア 高木滉平のポートフォリオサイト",
+  "start_url": "/my-homepage/",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#00d4ff",
+  "icons": [
+    {
+      "src": "/my-homepage/img/ogp.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

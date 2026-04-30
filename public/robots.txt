@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tomosoko.github.io/my-homepage/sitemap.xml
