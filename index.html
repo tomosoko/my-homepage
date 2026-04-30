@@ -109,8 +109,8 @@
                     </h1>
                     <div class="hero-bottom">
                         <p class="hero-desc">
-                            診療放射線技師の臨床知識と最新のDeep Learningを融合。<br>
-                            患者データ不要・倫理委員会フリーのX線AI開発パイプラインを独自確立。
+                            Combining clinical expertise as a radiologic technologist with cutting-edge deep learning.<br>
+                            Built an X-ray AI pipeline that trains without patient data — no ethics approval required.
                         </p>
                         <div class="hero-cta">
                             <a href="#projects" class="btn btn-white">View Projects</a>
@@ -135,22 +135,22 @@
                         <h2 class="about-heading">Clinical Insight<br>meets<br>Deep Learning</h2>
                         <div class="divider"></div>
                         <p class="about-org">
-                            国立病院機構<br>
-                            <strong>福山医療センター</strong><br>
-                            放射線科
+                            National Hospital Organization<br>
+                            <strong>Fukuyama Medical Center</strong><br>
+                            Dept. of Radiology
                         </p>
                         <p class="about-org-sub">NHO Fukuyama Medical Center, Dept. of Radiology</p>
                         <p class="about-tel">TEL: 084-922-0001</p>
                     </div>
                     <div class="about-right">
                         <p class="about-lead">
-                            現役の診療放射線技師として臨床現場に立ちながら、医療画像AIの独自開発に取り組んでいます。
+                            An active clinical radiologic technologist developing original medical imaging AI from the frontlines.
                         </p>
                         <p>
-                            YOLOv8-poseによるキーポイント検出と幾何学的角度計算を組み合わせ、X線撮影のポジショニング品質を定量評価するシステムを構築。合成DRR（擬似X線）を自動生成するパイプラインにより、<strong>患者データなし・倫理委員会不要</strong>でモデルを訓練できる手法を独自に確立しました。
+                            Built a system combining YOLOv8-pose keypoint detection with geometric angle calculation to quantitatively assess X-ray positioning quality. Developed a unique pipeline for auto-generating synthetic DRR (pseudo X-ray) images — enabling model training with <strong>zero patient data and no ethics approval required</strong>.
                         </p>
                         <p>
-                            「現場を知るエンジニア」として、臨床で本当に必要とされるAIシステムを開発することをミッションとしています。
+                            My mission as an "engineer who knows the clinic" is to develop AI systems that are truly needed in real clinical environments.
                         </p>
                         <div class="about-stats">
                             <div class="stat">
@@ -194,20 +194,20 @@
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">OsteoVision</h3>
-                        <p class="project-subtitle">膝関節X線ポジショニングAI — AI-powered Knee X-ray Angle Estimation & QA System</p>
+                        <p class="project-subtitle">Knee X-ray Positioning AI — AI-powered Knee X-ray Angle Estimation & QA System</p>
                         <div class="project-img-wrap">
                             <img src="img/osteovision.svg" loading="lazy" alt="OsteoVision — Knee X-ray with YOLOv8-pose keypoints and angle measurement" class="project-img">
-                            <p class="project-img-caption">合成DRR（擬似X線）画像 + YOLOv8-poseキーポイント検出・角度計測</p>
+                            <p class="project-img-caption">Synthetic DRR (pseudo X-ray) images + YOLOv8-pose keypoint detection & angle measurement</p>
                         </div>
                         <div class="project-grid">
                             <div class="project-desc">
-                                <p>膝関節X線画像からYOLOv8-poseでキーポイントを検出し、関節角度・回旋量を自動推定。ポジショニング品質を定量的にフィードバックするシステム。</p>
+                                <p>Detects keypoints from knee X-ray images with YOLOv8-pose to automatically estimate joint angle and rotation. A system that provides quantitative positioning quality feedback.</p>
                                 <ul class="feat-list">
-                                    <li><span class="feat-key">合成DRR自動生成</span>OsteoSynthで720枚の訓練データを生成（患者データ不要）</li>
-                                    <li><span class="feat-key">精度</span>mAP50 = 99.8%（633枚で訓練）</li>
-                                    <li><span class="feat-key">MPS推論</span>Apple Silicon最適化 — 13.7ms / 73.2FPS リアルタイム推論</li>
-                                    <li><span class="feat-key">統計検証</span>Bland-Altman分析による系統誤差・一致限界の定量評価フレームワーク</li>
-                                    <li><span class="feat-key">XAI</span>Grad-CAMによる注視領域可視化</li>
+                                    <li><span class="feat-key">Auto DRR Generation</span>720 training samples generated via OsteoSynth (no patient data)</li>
+                                    <li><span class="feat-key">Accuracy</span>mAP50 = 99.8% (trained on 633 images)</li>
+                                    <li><span class="feat-key">MPS Inference</span>Apple Silicon optimized — 13.7ms / 73.2FPS real-time inference</li>
+                                    <li><span class="feat-key">Statistical Validation</span>Bland-Altman analysis for systematic bias & limits of agreement</li>
+                                    <li><span class="feat-key">XAI</span>Grad-CAM visualization of attention regions</li>
                                     <li><span class="feat-key">CI/CD</span>GitHub Actions + Docker</li>
                                 </ul>
                             </div>
@@ -244,19 +244,19 @@
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">ElbowVision</h3>
-                        <p class="project-subtitle">肘X線ポジショニングAI — AI Positioning Guidance for Elbow X-ray Imaging</p>
+                        <p class="project-subtitle">Elbow X-ray Positioning AI — AI Positioning Guidance for Elbow X-ray Imaging</p>
                         <div class="project-img-wrap">
                             <img src="img/elbowvision.svg" loading="lazy" alt="ElbowVision — Elbow X-ray with carrying angle and flexion angle measurement" class="project-img">
-                            <p class="project-img-caption">実ファントムX線画像 + キーポイント検出・外反角（Carrying angle）・屈曲角計測</p>
+                            <p class="project-img-caption">Real phantom X-ray images + keypoint detection, carrying angle & flexion angle measurement</p>
                         </div>
                         <div class="project-grid">
                             <div class="project-desc">
-                                <p>肘X線画像から外反角（Carrying angle）・屈曲角をAIで推定し、ポジショニング補正アドバイスをリアルタイム提供するシステム。</p>
+                                <p>Estimates carrying angle and flexion angle from elbow X-ray images using AI, providing real-time positioning correction advice.</p>
                                 <ul class="feat-list">
-                                    <li><span class="feat-key">DRR自動生成</span>CT→DRR合成パイプラインで訓練データを自動生成（患者データ不要）</li>
-                                    <li><span class="feat-key">6キーポイント検出</span>肘関節の解剖学的ランドマーク6点をYOLOv8-poseで検出</li>
-                                    <li><span class="feat-key">デュアルモデル</span>YOLOv8-pose（主）+ ConvNeXt（セカンドオピニオン）</li>
-                                    <li><span class="feat-key">エッジ検証</span>Canny + HoughLinesPで骨軸を独立検出</li>
+                                    <li><span class="feat-key">Auto DRR Generation</span>CT→DRR synthesis pipeline auto-generates training data (no patient data)</li>
+                                    <li><span class="feat-key">6-Keypoint Detection</span>6 anatomical landmarks of the elbow joint detected via YOLOv8-pose</li>
+                                    <li><span class="feat-key">Dual Model</span>YOLOv8-pose (primary) + ConvNeXt (second opinion)</li>
+                                    <li><span class="feat-key">Edge Validation</span>Independent bone axis detection via Canny + HoughLinesP</li>
                                 </ul>
                             </div>
                             <div class="project-visual">
@@ -292,19 +292,19 @@
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">kabu-sim</h3>
-                        <p class="project-subtitle">株式投資シミュレーター — Stock Investment Simulator & Analytics Platform</p>
+                        <p class="project-subtitle">Stock Investment Simulator — Stock Investment Simulator & Analytics Platform</p>
                         <div class="project-img-wrap">
                             <img src="img/kabu-sim.svg" loading="lazy" alt="kabu-sim — Candlestick chart dashboard with moving averages and buy/sell signals" class="project-img">
-                            <p class="project-img-caption">Streamlitダッシュボード — ローソク足チャート・移動平均・シグナル表示</p>
+                            <p class="project-img-caption">Streamlit dashboard — candlestick chart, moving averages & buy/sell signals</p>
                         </div>
                         <div class="project-grid">
                             <div class="project-desc">
-                                <p>Streamlitベースの大規模株式投資シミュレーション・分析プラットフォーム。Cloudflare Tunnelで安全に外部公開。</p>
+                                <p>A large-scale stock investment simulation and analysis platform built on Streamlit, securely published via Cloudflare Tunnel.</p>
                                 <ul class="feat-list">
-                                    <li><span class="feat-key">大規模コードベース</span>73,000行以上のPythonコード</li>
-                                    <li><span class="feat-key">テスト</span>2,054テストケースで品質担保</li>
-                                    <li><span class="feat-key">UI</span>65ページの充実したStreamlit UI</li>
-                                    <li><span class="feat-key">公開基盤</span>Cloudflare Tunnelによるセキュアな外部公開</li>
+                                    <li><span class="feat-key">Large Codebase</span>73,000+ lines of Python code</li>
+                                    <li><span class="feat-key">Testing</span>2,054 test cases ensuring quality</li>
+                                    <li><span class="feat-key">UI</span>65-page full-featured Streamlit UI</li>
+                                    <li><span class="feat-key">Deployment</span>Secure external access via Cloudflare Tunnel</li>
                                 </ul>
                             </div>
                             <div class="project-visual">
@@ -341,20 +341,20 @@
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">FMC Diet</h3>
-                        <p class="project-subtitle">職場ダイエットバトルPWA — AI-Powered Team Weight-Loss Competition App</p>
+                        <p class="project-subtitle">Workplace Diet Battle PWA — AI-Powered Team Weight-Loss Competition App</p>
                         <div class="project-img-wrap">
                             <img src="img/fmcdiet.svg" loading="lazy" alt="FMC Diet — Weight trend chart with Theil-Sen prediction and live leaderboard" class="project-img">
-                            <p class="project-img-caption">体重推移グラフ + Theil-Sen予測 + リアルタイムリーダーボード</p>
+                            <p class="project-img-caption">Weight trend chart + Theil-Sen prediction + real-time leaderboard</p>
                         </div>
                         <div class="project-grid">
                             <div class="project-desc">
-                                <p>チームで体重変化率を競い合う職場向けダイエットバトルPWA。Firebase Firestoreでリアルタイム同期、Gemini AIがコーチングコメントを生成。</p>
+                                <p>A workplace diet battle PWA where teams compete on weight-change rate. Real-time sync via Firebase Firestore, with Gemini AI generating personalized coaching comments.</p>
                                 <ul class="feat-list">
-                                    <li><span class="feat-key">AI予測エンジン</span>Theil-Sen推定 + BMI適応ダンピングで体重推移を予測</li>
-                                    <li><span class="feat-key">Gemini AI</span>個人の進捗に応じたAIアドバイス・チャット機能</li>
-                                    <li><span class="feat-key">ハンディキャップ制</span>体型差を考慮した公平なスコアリングシステム</li>
-                                    <li><span class="feat-key">PWA</span>Service Workerによるオフライン対応・モバイルインストール可能</li>
-                                    <li><span class="feat-key">リアルタイム</span>Firebase Firestoreによるライブリーダーボード</li>
+                                    <li><span class="feat-key">AI Prediction Engine</span>Theil-Sen estimation + BMI-adaptive damping for weight trend prediction</li>
+                                    <li><span class="feat-key">Gemini AI</span>Personalized AI advice & chat based on individual progress</li>
+                                    <li><span class="feat-key">Handicap System</span>Fair scoring that accounts for body type differences</li>
+                                    <li><span class="feat-key">PWA</span>Offline support via Service Worker, installable on mobile</li>
+                                    <li><span class="feat-key">Real-time</span>Live leaderboard powered by Firebase Firestore</li>
                                 </ul>
                             </div>
                             <div class="project-visual">
@@ -390,12 +390,12 @@
                         <p class="earlier-en">Deep Learning Program for Retake Decision Support in Knee X-ray Imaging</p>
                         <div class="project-img-wrap" style="margin-bottom:1.5rem;">
                             <img src="img/convnext-gradcam.svg" loading="lazy" alt="ConvNeXt Grad-CAM visualization showing attention on lateral femoral condyle" class="project-img">
-                            <p class="project-img-caption">Grad-CAM可視化 — 熟練技師と同様に大腿骨顆部（lateral condyle）に注目</p>
+                            <p class="project-img-caption">Grad-CAM visualization — attention focused on the lateral femoral condyle, matching experienced radiologic technologists</p>
                         </div>
-                        <p>ConvNeXt-Tinyを用いて膝関節側面像の角度ズレを自動推定。R² > 0.96、MAE 約1〜2°を達成。Grad-CAMにより熟練技師と同様の注視領域（大腿骨顆部）を学習していることを確認。現在のOsteoVision（YOLOv8-pose版）の前身研究。</p>
+                        <p>Automatic angle-deviation estimation in knee lateral X-rays using ConvNeXt-Tiny. Achieved R² > 0.96 and MAE ~1–2°. Grad-CAM confirmed attention on the lateral femoral condyle — consistent with experienced radiologic technologists. The predecessor to the current OsteoVision (YOLOv8-pose version).</p>
                         <div class="earlier-metrics">
                             <span>R² &gt; 0.96</span>
-                            <span>MAE: 1〜2°</span>
+                            <span>MAE: 1–2°</span>
                             <span>ConvNeXt-Tiny (ImageNet-1k Pre-trained)</span>
                             <span>671 images (Phantom dataset)</span>
                         </div>
@@ -413,7 +413,7 @@
                     <div class="pres-item">
                         <div class="pres-year">2025</div>
                         <div class="pres-body">
-                            <div class="pres-conf">中四国放射線学術大会</div>
+                            <div class="pres-conf">Chushikoku Radiology Academic Conference</div>
                             <h3 class="pres-title">膝関節X線撮影における再撮影判断支援のための深層学習プログラムの開発</h3>
                             <p class="pres-en">Development of a Deep Learning Program for Retake Decision Support in Knee X-ray Imaging</p>
                             <div class="pres-tags">
@@ -477,7 +477,7 @@
                 <div class="section-label">05 — Contact</div>
                 <div class="contact-layout">
                     <h2 class="contact-heading">Let's Connect</h2>
-                    <p class="contact-desc">研究・共同開発・採用に関するお問い合わせはお気軽にどうぞ。</p>
+                    <p class="contact-desc">Open to inquiries about research collaborations, joint development, and employment opportunities.</p>
                     <div class="contact-links">
                         <a href="mailto:takagi.works.dev@gmail.com" class="contact-btn">
                             <span class="contact-btn-label">Email</span>
