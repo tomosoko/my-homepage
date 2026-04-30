@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,6 +26,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://tomosoko.github.io/my-homepage/#person",
+          "name": "Kohei Takagi",
+          "alternateName": "高木滉平",
+          "url": "https://tomosoko.github.io/my-homepage/",
+          "image": "https://tomosoko.github.io/my-homepage/img/ogp.svg",
+          "sameAs": ["https://github.com/tomosoko"],
+          "jobTitle": "Radiologic Technologist & AI Developer",
+          "description": "Radiologic Technologist and AI Developer. Developing X-ray positioning AI using YOLOv8-pose, achieving mAP50 99.8% without patient data.",
+          "knowsAbout": ["Medical Imaging AI", "YOLOv8", "PyTorch", "Radiology", "X-ray Positioning", "Deep Learning", "FastAPI", "Docker"]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://tomosoko.github.io/my-homepage/#website",
+          "url": "https://tomosoko.github.io/my-homepage/",
+          "name": "Kohei Takagi — Radiologic Technologist & AI Developer",
+          "description": "Portfolio of Kohei Takagi, a Radiologic Technologist and AI Developer specializing in medical imaging AI.",
+          "author": { "@id": "https://tomosoko.github.io/my-homepage/#person" }
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
 
