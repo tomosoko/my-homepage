@@ -40,4 +40,8 @@ out/
 
 # Logs
 *.log
+
+# Backup files
+*.bak
+
 src/main.js
