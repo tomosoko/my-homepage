@@ -210,7 +210,35 @@ function initMobileMenu(): void {
     if (e.target === overlay) closeMenu()
   })
   document.addEventListener('keydown', (e: KeyboardEvent) => {
-    if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeMenu()
+    if (!overlay.classList.contains('is-open')) return
+
+    if (e.key === 'Escape') {
+      closeMenu()
+      return
+    }
+
+    // Focus trap: keep Tab/Shift+Tab within the overlay
+    if (e.key === 'Tab') {
+      const focusable = Array.from(
+        overlay.querySelectorAll<HTMLElement>('button, a, [tabindex]:not([tabindex="-1"])')
+      ).filter(el => !el.hasAttribute('disabled'))
+      if (focusable.length === 0) return
+
+      const first = focusable[0]
+      const last = focusable[focusable.length - 1]
+
+      if (e.shiftKey) {
+        if (document.activeElement === first) {
+          e.preventDefault()
+          last.focus()
+        }
+      } else {
+        if (document.activeElement === last) {
+          e.preventDefault()
+          first.focus()
+        }
+      }
+    }
   })
   overlay.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', closeMenu)
