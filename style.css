@@ -381,6 +381,8 @@ body {
     margin-bottom: 0.4rem; line-height: 1.4;
 }
 .earlier-en { color: var(--muted); font-size: 0.82rem; margin-bottom: 1rem; }
+.earlier-tags { margin-bottom: 1rem; }
+.earlier-img-wrap { margin-bottom: 1.5rem; }
 .earlier-card p { color: var(--muted); font-size: 0.87rem; margin-bottom: 1.5rem; }
 .earlier-metrics {
     display: flex; flex-wrap: wrap; gap: 1.5rem;
