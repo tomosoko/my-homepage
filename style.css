@@ -45,6 +45,29 @@ body {
 .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 
 /* ─────────────────────────────────────────────
+   SKIP LINK (WCAG 2.4.1)
+───────────────────────────────────────────── */
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    z-index: 200;
+    padding: 0.75rem 1.5rem;
+    background: var(--text);
+    color: var(--bg);
+    font-family: var(--font-m);
+    font-size: 0.875rem;
+    text-decoration: none;
+    border-radius: 0 0 0.5rem 0.5rem;
+    transition: top 0.15s ease;
+}
+.skip-link:focus {
+    top: 0;
+    outline: 2px solid var(--text);
+    outline-offset: 2px;
+}
+
+/* ─────────────────────────────────────────────
    HEADER
 ───────────────────────────────────────────── */
 .site-header {
