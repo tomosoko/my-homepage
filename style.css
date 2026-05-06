@@ -45,6 +45,19 @@ body {
 .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 
 /* ─────────────────────────────────────────────
+   FOCUS INDICATORS (WCAG 2.4.7)
+───────────────────────────────────────────── */
+:focus-visible {
+    outline: 2px solid var(--text);
+    outline-offset: 2px;
+}
+
+/* Remove outline for mouse/touch interactions */
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* ─────────────────────────────────────────────
    SKIP LINK (WCAG 2.4.1)
 ───────────────────────────────────────────── */
 .skip-link {
@@ -103,6 +116,7 @@ body {
     transition: background .2s, color .2s !important;
 }
 .nav-github:hover { background: var(--text) !important; color: var(--bg) !important; }
+.nav-github:focus-visible { outline-offset: 4px; }
 
 .mobile-menu-btn {
     display: none; flex-direction: column; gap: 5px;
@@ -181,6 +195,7 @@ body {
 .btn-white:hover { background: #222; border-color: #222; }
 .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border2); }
 .btn-outline:hover { background: var(--subtle); }
+.btn:focus-visible { outline-offset: 4px; }
 
 .hero-scroll {
     margin-top: 5rem; display: flex; align-items: center; gap: 1rem;
@@ -461,6 +476,7 @@ body {
     transition: background .2s, border-color .2s;
 }
 .contact-btn:hover { background: var(--bg3); border-color: var(--border2); }
+.contact-btn:focus-visible { outline-offset: -2px; }
 .contact-btn-label {
     font-family: var(--font-m); font-size: 0.65rem; color: var(--muted);
     text-transform: uppercase; letter-spacing: 0.12em; min-width: 80px;
@@ -498,6 +514,7 @@ body {
     transition: all .2s;
 }
 .mobile-overlay-close:hover { color: var(--text); border-color: var(--text); }
+.mobile-overlay-close:focus-visible { outline-offset: 4px; }
 .mobile-nav { display: flex; flex-direction: column; align-items: center; gap: 2.2rem; }
 .mobile-nav a {
     font-family: var(--font-h); color: var(--text); font-size: 2.2rem;
@@ -620,6 +637,7 @@ body {
     background: var(--text);
     color: var(--bg);
 }
+#back-to-top:focus-visible { outline-offset: 4px; }
 
 /* ─────────────────────────────────────────────
    DARK MODE
