@@ -6,7 +6,7 @@
     --bg2:      #f0f0f0;
     --bg3:      #e8e8e8;
     --text:     #0a0a0a;
-    --muted:    #777;
+    --muted:    #707070;
     --subtle:   #ebebeb;
     --border:   rgba(0,0,0,0.08);
     --border2:  rgba(0,0,0,0.35);
@@ -377,7 +377,7 @@ body {
     aspect-ratio: 640 / 340;
 }
 .project-img-caption {
-    font-family: var(--font-m); font-size: 0.68rem; color: #555;
+    font-family: var(--font-m); font-size: 0.68rem; color: #888;
     padding: 0.6rem 1rem; border-top: 1px solid #1a1a1a;
     background: #0d0d0d; letter-spacing: 0.04em;
 }
