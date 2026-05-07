@@ -232,7 +232,7 @@ body {
     border-top: 1px solid var(--border);
 }
 .section-label {
-    font-family: var(--font-m); font-size: 0.7rem;
+    font-family: var(--font-m); font-size: 0.7rem; font-weight: 400;
     color: var(--text); letter-spacing: 0.18em; text-transform: uppercase;
     margin-bottom: 5rem;
 }
