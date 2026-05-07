@@ -286,8 +286,10 @@ function initScrollSpy(): void {
       const href = a.getAttribute('href')
       if (href === `#${id}`) {
         a.classList.add('active')
+        a.setAttribute('aria-current', 'true')
       } else {
         a.classList.remove('active')
+        a.removeAttribute('aria-current')
       }
     })
   }
