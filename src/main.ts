@@ -1,3 +1,9 @@
+// Self-hosted fonts (eliminates external requests to Google Fonts)
+import '@fontsource-variable/inter' // wght 100-900
+import '@fontsource/space-mono/400.css'
+import '@fontsource/space-mono/400-italic.css'
+import '@fontsource/space-mono/700.css'
+
 document.addEventListener('DOMContentLoaded', () => {
   initCanvas()
   initMobileMenu()
