@@ -1,8 +1,8 @@
 // Self-hosted fonts (eliminates external requests to Google Fonts)
 import './inter-latin.css' // Inter Variable — latin subset only (saves ~149 KB vs all subsets)
-import '@fontsource/space-mono/400.css'
-import '@fontsource/space-mono/400-italic.css'
-import '@fontsource/space-mono/700.css'
+import '@fontsource/space-mono/latin-400.css'        // latin subset only (saves ~80 KB vs all subsets)
+import '@fontsource/space-mono/latin-400-italic.css'  // used by .tag-wip
+import '@fontsource/space-mono/latin-700.css'          // used by .metric-badge strong
 
 document.addEventListener('DOMContentLoaded', () => {
   initCanvas()
