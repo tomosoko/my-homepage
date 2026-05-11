@@ -72,7 +72,7 @@
     .hero-meta strong { color: var(--text); }
 
     .section { padding: 2.5rem 1.5rem; border-bottom: 1px solid var(--border); }
-    .section-label {
+    h2.section-label {
       font-size: 0.65rem; font-weight: 700; color: var(--muted);
       text-transform: uppercase; letter-spacing: 0.15em;
       margin-bottom: 1.25rem;
@@ -213,6 +213,8 @@
     <span class="header-label">Diet Plan 2026</span>
   </header>
 
+  <main id="main-content">
+
   <div class="hero">
     <span class="hero-tag">2026-03-20 → 2026-04-30</span>
     <h1 class="hero-title">-7kg<br><span>in 41 days</span></h1>
@@ -224,8 +226,8 @@
   </div>
 
   <!-- Progress -->
-  <div class="section">
-    <div class="section-label">Progress</div>
+  <section class="section" aria-labelledby="heading-progress">
+    <h2 class="section-label" id="heading-progress">Progress</h2>
 
     <div class="progress-card">
       <div class="progress-row">
@@ -254,11 +256,11 @@
     <p style="font-size:0.72rem; color:var(--muted); text-align:center;">
       体重はEufy体重計 → Apple Health → 自動連携
     </p>
-  </div>
+  </section>
 
   <!-- Calorie Budget -->
-  <div class="section">
-    <div class="section-label">Calorie Budget</div>
+  <section class="section" aria-labelledby="heading-calorie">
+    <h2 class="section-label" id="heading-calorie">Calorie Budget</h2>
     <div class="kcal-grid">
       <div class="kcal-item">
         <div class="kcal-item-label">TDEE</div>
@@ -280,11 +282,11 @@
     <p style="font-size:0.72rem; color:var(--muted);">
       毎日3kmランニング＋筋トレ30分を加味したTDEE（約2,700 kcal）。筋肉量維持のためタンパク質は体重×2g/日を確保。
     </p>
-  </div>
+  </section>
 
   <!-- Meal Plan -->
-  <div class="section">
-    <div class="section-label">Daily Meal Plan</div>
+  <section class="section" aria-labelledby="heading-meal">
+    <h2 class="section-label" id="heading-meal">Daily Meal Plan</h2>
     <div style="display:flex; justify-content:flex-end; gap:1rem; font-size:0.65rem; color:var(--muted); margin-bottom:0.5rem; font-weight:600; text-transform:uppercase; letter-spacing:0.1em;">
       <span style="min-width:3rem; text-align:right;">kcal</span>
       <span style="min-width:3rem; text-align:right;">Protein</span>
@@ -331,11 +333,11 @@
         <span class="meal-protein">150g</span>
       </li>
     </ul>
-  </div>
+  </section>
 
   <!-- Rules -->
-  <div class="section">
-    <div class="section-label">Rules</div>
+  <section class="section" aria-labelledby="heading-rules">
+    <h2 class="section-label" id="heading-rules">Rules</h2>
     <ul class="rules-list">
       <li class="rule-item">
         <span class="rule-num">01</span>
@@ -362,11 +364,11 @@
         <span>ビタミン剤は毎朝食後に必ず飲む（微量栄養素補完のため必須）</span>
       </li>
     </ul>
-  </div>
+  </section>
 
   <!-- Milestones -->
-  <div class="section">
-    <div class="section-label">Weekly Milestones</div>
+  <section class="section" aria-labelledby="heading-milestones">
+    <h2 class="section-label" id="heading-milestones">Weekly Milestones</h2>
     <ul class="milestones-list">
       <li class="milestone-item">
         <span class="milestone-week">Week 1</span>
@@ -399,7 +401,9 @@
         <span class="milestone-weight" id="w6">58.0 kg</span>
       </li>
     </ul>
-  </div>
+  </section>
+
+  </main>
 
   <footer class="footer">
     <p>Kohei Takagi — Diet Battle 2026</p>
