@@ -1,5 +1,5 @@
 // Self-hosted fonts (eliminates external requests to Google Fonts)
-import '@fontsource-variable/inter' // wght 100-900
+import './inter-latin.css' // Inter Variable — latin subset only (saves ~149 KB vs all subsets)
 import '@fontsource/space-mono/400.css'
 import '@fontsource/space-mono/400-italic.css'
 import '@fontsource/space-mono/700.css'
