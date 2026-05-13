@@ -694,6 +694,9 @@ body {
    REDUCED MOTION — respect OS accessibility setting
 ───────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
+    /* Disable smooth scrolling for users who prefer reduced motion */
+    html { scroll-behavior: auto; }
+
     /* Disable scroll-in animations: show elements immediately */
     .will-animate {
         opacity: 1;
