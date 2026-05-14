@@ -170,53 +170,37 @@ function initCanvas(): void {
 
 /* UI Interactions */
 function initMobileMenu(): void {
-  const mobileBtn = document.querySelector('.mobile-menu-btn')
-  const navLinks = document.querySelector('.nav-links')
-  if (!mobileBtn || !navLinks) return
+  const mobileBtn = document.querySelector<HTMLButtonElement>('.mobile-menu-btn')
+  const overlay = document.getElementById('mobile-overlay')
+  if (!mobileBtn || !overlay) return
 
-  // Create overlay
-  const overlay = document.createElement('div')
-  overlay.className = 'mobile-overlay'
-  overlay.id = 'mobile-overlay'
-  overlay.setAttribute('role', 'dialog')
-  overlay.setAttribute('aria-modal', 'true')
-  overlay.setAttribute('aria-label', 'Navigation menu')
-  overlay.innerHTML = `
-    <button class="mobile-overlay-close" aria-label="Close menu">✕</button>
-    <nav class="mobile-nav">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#presentations">Presentations</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-      <a href="https://github.com/tomosoko" target="_blank" rel="noopener noreferrer">GitHub</a>
-    </nav>
-  `
-  document.body.appendChild(overlay)
-
-  const closeBtn = overlay.querySelector('.mobile-overlay-close') as HTMLButtonElement | null
+  const closeBtn = overlay.querySelector<HTMLButtonElement>('.mobile-overlay-close')
   if (!closeBtn) return
 
+  // Capture narrowed references for use in closures
+  const btn = mobileBtn
+  const ov = overlay
+
   function openMenu(): void {
-    overlay.classList.add('is-open')
+    ov.classList.add('is-open')
     document.body.style.overflow = 'hidden'
-    ;(mobileBtn as HTMLButtonElement).setAttribute('aria-expanded', 'true')
+    btn.setAttribute('aria-expanded', 'true')
     closeBtn?.focus()
   }
   function closeMenu(): void {
-    overlay.classList.remove('is-open')
+    ov.classList.remove('is-open')
     document.body.style.overflow = ''
-    ;(mobileBtn as HTMLButtonElement).setAttribute('aria-expanded', 'false')
-    ;(mobileBtn as HTMLButtonElement).focus()
+    btn.setAttribute('aria-expanded', 'false')
+    btn.focus()
   }
 
-  mobileBtn.addEventListener('click', openMenu)
+  btn.addEventListener('click', openMenu)
   closeBtn.addEventListener('click', closeMenu)
-  overlay.addEventListener('click', (e: Event) => {
-    if (e.target === overlay) closeMenu()
+  ov.addEventListener('click', (e: Event) => {
+    if (e.target === ov) closeMenu()
   })
   document.addEventListener('keydown', (e: KeyboardEvent) => {
-    if (!overlay.classList.contains('is-open')) return
+    if (!ov.classList.contains('is-open')) return
 
     if (e.key === 'Escape') {
       closeMenu()
@@ -226,7 +210,7 @@ function initMobileMenu(): void {
     // Focus trap: keep Tab/Shift+Tab within the overlay
     if (e.key === 'Tab') {
       const focusable = Array.from(
-        overlay.querySelectorAll<HTMLElement>('button, a, [tabindex]:not([tabindex="-1"])')
+        ov.querySelectorAll<HTMLElement>('button, a, [tabindex]:not([tabindex="-1"])')
       ).filter(el => !el.hasAttribute('disabled'))
       if (focusable.length === 0) return
 
@@ -246,7 +230,7 @@ function initMobileMenu(): void {
       }
     }
   })
-  overlay.querySelectorAll('a').forEach(a => {
+  ov.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', closeMenu)
   })
 }
