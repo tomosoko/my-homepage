@@ -26,6 +26,50 @@
     <meta name="color-scheme" content="light dark">
     <!-- Canonical -->
     <link rel="canonical" href="https://tomosoko.github.io/my-homepage/">
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "url": "https://tomosoko.github.io/my-homepage/",
+          "name": "Kohei Takagi — Radiologic Technologist & AI Developer"
+        },
+        {
+          "@type": "ProfilePage",
+          "mainEntity": {
+            "@type": "Person",
+            "name": "Kohei Takagi",
+            "alternateName": "高木 滉平",
+            "jobTitle": "Radiologic Technologist & AI Developer",
+            "url": "https://tomosoko.github.io/my-homepage/",
+            "sameAs": [
+              "https://github.com/tomosoko"
+            ],
+            "email": "takagi.works.dev@gmail.com",
+            "worksFor": {
+              "@type": "Organization",
+              "name": "NHO Fukuyama Medical Center",
+              "department": {
+                "@type": "Organization",
+                "name": "Dept. of Radiology"
+              }
+            },
+            "knowsAbout": [
+              "Medical Imaging AI",
+              "YOLOv8-pose",
+              "Deep Learning",
+              "X-ray Positioning QA",
+              "DRR Synthesis",
+              "Radiologic Technology"
+            ],
+            "description": "Clinical radiologic technologist developing medical imaging AI. X-ray positioning QA system using YOLOv8-pose, achieving mAP50 99.8% — no patient data required."
+          }
+        }
+      ]
+    }
+    </script>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="icon" href="favicon.svg" sizes="any">
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
